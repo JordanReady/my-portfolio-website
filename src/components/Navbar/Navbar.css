@@ -1,0 +1,184 @@
+@import url("../../variables.css");
+
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header button:hover {
+  text-decoration: none;
+  color: var(--secondary-color);
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 10px #ff00de,
+    0 0 15px #ff00de, 0 0 20px #ff00de, 0 0 25px #ff00de;
+  transition-property: text-shadow ease 0.3s;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bolder;
+  color: var(--secondary-color);
+  text-decoration: none;
+  cursor: default;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  text-shadow: 1px 1px 1px #ffffff3a;
+}
+
+.logo img {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.logo:hover {
+  text-shadow: none !important;
+  color: var(--secondary-color);
+}
+
+.navbar button {
+  font-size: 1.25rem;
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 2rem;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: slideTop 0.4s ease forwards;
+  animation-delay: calc(0.2s * var(--i));
+}
+
+.navbar button:hover {
+  opacity: 1;
+  color: var(--secondary-color);
+  text-shadow: 1px 1px 1px #ffffffd2;
+}
+
+.navbar button:hover::after {
+  width: 100% !important;
+}
+
+.navbar button:after {
+  content: "" !important;
+  position: absolute !important;
+  width: 0 !important;
+  height: 2px !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(to bottom, var(--primary-color), white);
+  transition: width 0.3s !important;
+}
+
+.navbar .active {
+  color: var(--secondary-color);
+  text-shadow: 1px 1px 1px #ffffff71;
+  content: "" !important;
+  position: absolute !important;
+  width: 94% !important;
+  height: 2px !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(to bottom, var(--primary-color), white);
+}
+
+.active:after {
+  content: "" !important;
+  position: absolute !important;
+  width: 100% !important;
+  height: 2px !important;
+  left: 0 !important;
+  bottom: 0 !important;
+  background: linear-gradient(to bottom, var(--primary-color), white);
+}
+
+.active {
+  color: var(--secondary-color);
+  text-shadow: 1px 1px 1px #ffffff3a;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 0 !important;
+  }
+  .navbar .active {
+    padding-top: 0.25rem;
+    font-size: 20px !important;
+    width: 100% !important;
+  }
+  button.active {
+    font-size: 20px !important;
+  }
+  .logo {
+    display: none;
+  }
+  button {
+    margin: 0 !important;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    font-size: 18px !important;
+  }
+}
+
+/* Animations */
+@keyframes slideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes tada-hover {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  10%,
+  20% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+  }
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+  40%,
+  60%,
+  80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
