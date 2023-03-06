@@ -1,0 +1,10 @@
+@import url("../../variables.css");
+
+h1 {
+  font-size: 2.75rem;
+  font-weight: 700;
+  opacity: 0;
+  animation: slideRight 0.5s ease forwards;
+  animation-delay: 1.2s;
+  color: var(--primary-color);
+}
