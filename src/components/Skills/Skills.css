@@ -5,6 +5,6 @@ h1 {
   font-weight: 700;
   opacity: 0;
   animation: slideRight 0.5s ease forwards;
-  animation-delay: 1.2s;
+  animation-delay: 0.2s;
   color: var(--primary-color);
 }

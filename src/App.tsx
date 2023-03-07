@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
@@ -11,11 +11,19 @@ import "./App.css";
 
 function App() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [shouldSlideOut, setShouldSlideOut] = useState(false);
 
   const handleIndex = (index: number) => {
-    setActiveIndex(index);
-    console.log(activeIndex);
+    setShouldSlideOut(true);
+    setTimeout(() => {
+      setActiveIndex(index);
+      setShouldSlideOut(false);
+    }, 800);
   };
+
+  useEffect(() => {
+    console.log("shouldSlideOut", shouldSlideOut);
+  }, [shouldSlideOut]);
 
   const getSection = () => {
     switch (activeIndex) {
@@ -36,10 +44,9 @@ function App() {
 
   return (
     <div className="App">
-      <div className="background"></div>
-      <div className="container">
-        <Navbar activeIndex={activeIndex} handleIndex={handleIndex} />
-        <div className="section">{getSection()}</div>
+      <Navbar activeIndex={activeIndex} handleIndex={handleIndex} />
+      <div className={`section ${shouldSlideOut ? "slide-out" : ""}`}>
+        {getSection()}
       </div>
     </div>
   );

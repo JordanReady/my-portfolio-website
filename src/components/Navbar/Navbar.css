@@ -110,12 +110,15 @@
 .active {
   color: var(--secondary-color);
   text-shadow: 1px 1px 1px #ffffff3a;
+  pointer-events: none;
+  scale: 1.1;
 }
 
 @media screen and (max-width: 768px) {
   .header {
     flex-direction: column;
     padding: 0 !important;
+    background-color: rgba(0, 0, 0, 0.5);
   }
   .navbar .active {
     padding-top: 0.25rem;

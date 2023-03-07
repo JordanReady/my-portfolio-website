@@ -1,10 +1,239 @@
 @import url("../../variables.css");
+@import url("../../animations.css");
 
-h1 {
+#triangle-bottomright {
+  position: absolute;
+  width: 50vw;
+  height: 60vh;
+  bottom: 0;
+  right: 0;
+  opacity: 0.9;
+}
+
+#triangle-bottomright::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-width: 0 0 90vh 50vw;
+  border-style: solid;
+  border-color: var(--quaternary-color) transparent;
+  opacity: 0;
+  animation: slideRight 0.75s ease forwards;
+  animation-delay: 0.9s;
+}
+
+#triangle-bottomright-accent {
+  position: absolute;
+  width: 51vw;
+  height: 61vh;
+  bottom: 0;
+  right: 0;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+#triangle-bottomright-accent::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-width: 0 0 91vh 51vw;
+  border-style: solid;
+  border-color: var(--primary-color) transparent;
+  opacity: 0;
+  animation: slideRight 0.75s ease forwards;
+  animation-delay: 0.9s;
+}
+
+#triangle-topright {
+  position: absolute;
+  width: 50vw;
+  height: 60vh;
+  top: 0;
+  right: 0;
+  opacity: 0.98;
+}
+
+#triangle-topright::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 80vh 0 0 50vw;
+  border-style: solid;
+  border-color: var(--quaternary-color) transparent;
+  opacity: 0;
+  animation: slideRight 0.75s ease forwards;
+  animation-delay: 0.8s;
+}
+
+#triangle-topright-accent {
+  position: absolute;
+  width: 51vw;
+  height: 61vh;
+  top: 0;
+  right: 0;
+  opacity: 0.9;
+  z-index: -1;
+}
+
+#triangle-topright-accent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-width: 81vh 0 0 51vw;
+  border-style: solid;
+  border-color: var(--tertiary-color) transparent;
+  opacity: 0;
+  animation: slideRight 0.75s ease forwards;
+  animation-delay: 0.8s;
+}
+
+#triangle-topleft {
+  position: absolute;
+  width: 50vw;
+  height: 60vh;
+  top: 0;
+  left: -40vw;
+  opacity: 0.98;
+  transform: scaleX(-1);
+}
+
+#triangle-topleft::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: 0 20vh 100vw 0;
+  border-style: solid;
+  border-color: transparent var(--quaternary-color) transparent transparent;
+  opacity: 0;
+  animation: slideLeft 0.75s ease forwards;
+  animation-delay: 0.8s;
+}
+
+#triangle-topleft-accent {
+  position: absolute;
+  width: 51vw;
+  height: 61vh;
+  top: 0;
+  left: -40vw;
+  opacity: 0.9;
+  z-index: -1;
+  transform: scaleX(-1);
+}
+
+#triangle-topleft-accent::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-width: 0 21vh 101vw 0;
+  border-style: solid;
+  border-color: transparent var(--tertiary-color) transparent transparent;
+  opacity: 0;
+  animation: slideLeft 0.75s ease forwards;
+  animation-delay: 0.8s;
+}
+
+.about-container {
+  /* background-color: var(--primary-color); */
+}
+
+.about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 85vh;
+  color: white;
+  text-align: center;
+  padding: 0;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content h1 {
   font-size: 2.75rem;
   font-weight: 700;
   opacity: 0;
   animation: slideRight 0.5s ease forwards;
-  animation-delay: 1.2s;
-  color: var(--primary-color);
+  animation-delay: 0.2s;
+}
+
+.about-content p {
+  font-size: 1.25rem;
+  font-weight: 500;
+  opacity: 0;
+  animation: slideLeft 0.5s ease forwards;
+  animation-delay: 0.2s;
+  text-align: justify;
+}
+
+.about-content span {
+  color: var(--secondary-color);
+}
+
+.about-img {
+  position: relative;
+}
+
+.about-img img {
+  width: 550px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 47px;
+  opacity: 0;
+  animation: zoomIn 1s ease forwards, floatImg 4s ease-in-out infinite;
+  animation-delay: 0.4s;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    overflow: auto;
+  }
+  #triangle-bottomright {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+  #triangle-bottomright-accent {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+  }
+  #triangle-topright {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  #triangle-topright-accent {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+  #triangle-topleft {
+    position: fixed;
+    top: 0;
+    left: -3rem;
+  }
+  #triangle-topleft-accent {
+    position: fixed;
+    top: 0;
+    left: -2.75rem;
+  }
+  .about {
+    scale: 0.7;
+    height: 100vh;
+  }
+  .about-content p {
+    text-align: center;
+  }
 }

@@ -1,3 +1,6 @@
+@import url("./variables.css");
+@import url("./animations.css");
+
 * {
   margin: 0;
   padding: 0;
@@ -18,4 +21,16 @@ body {
   height: 100%;
   opacity: 0.4;
   object-fit: cover !important;
+}
+
+@media screen and (min-width: 768px) {
+  .slide-out {
+    animation: slideOut 0.8s ease forwards;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .slide-out {
+    animation: slideOutMobile 0.8s ease forwards !important;
+  }
 }

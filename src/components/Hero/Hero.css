@@ -1,3 +1,6 @@
+@import url("../../variables.css");
+@import url("../../animations.css");
+
 body {
   overflow: hidden;
 }
@@ -18,7 +21,7 @@ body {
   right: 0;
   border-width: 0 0 90vh 50vw;
   border-style: solid;
-  border-color: var(--tertiary-color) transparent;
+  border-color: var(--quaternary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
   animation-delay: 1.9s;
@@ -63,7 +66,7 @@ body {
   right: 0;
   border-width: 80vh 0 0 50vw;
   border-style: solid;
-  border-color: var(--tertiary-color) transparent;
+  border-color: var(--quaternary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
   animation-delay: 1.8s;
@@ -86,7 +89,7 @@ body {
   right: 0;
   border-width: 81vh 0 0 51vw;
   border-style: solid;
-  border-color: #4128f2 transparent;
+  border-color: var(--tertiary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
   animation-delay: 1.8s;
@@ -109,7 +112,7 @@ body {
   left: 0;
   border-width: 0 20vh 100vw 0;
   border-style: solid;
-  border-color: transparent var(--tertiary-color) transparent transparent;
+  border-color: transparent var(--quaternary-color) transparent transparent;
   opacity: 0;
   animation: slideLeft 0.75s ease forwards;
   animation-delay: 1.8s;
@@ -133,7 +136,7 @@ body {
   left: 0;
   border-width: 0 21vh 101vw 0;
   border-style: solid;
-  border-color: transparent #4128f2 transparent transparent;
+  border-color: transparent var(--tertiary-color) transparent transparent;
   opacity: 0;
   animation: slideLeft 0.75s ease forwards;
   animation-delay: 1.8s;
@@ -244,7 +247,7 @@ body {
     height: auto;
     scale: 0.75;
   }
-  p {
+  .hero-content p {
     display: none;
   }
   .hero-img img {
@@ -252,63 +255,5 @@ body {
   }
   .typed-container {
     height: 98px;
-  }
-}
-
-/* Animations */
-
-@keyframes slideBottom {
-  0% {
-    transform: translateY(-100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideTop {
-  0% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes slideLeft {
-  0% {
-    transform: translateX(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes zoomIn {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-@keyframes floatImg {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
   }
 }
