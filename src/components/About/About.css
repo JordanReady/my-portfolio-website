@@ -1,16 +1,17 @@
 @import url("../../variables.css");
 @import url("../../animations.css");
 
-#triangle-bottomright {
+#about-triangle-bottomright {
   position: absolute;
   width: 50vw;
   height: 60vh;
   bottom: 0;
-  right: 0;
+  left: 0;
   opacity: 0.9;
+  transform: scaleX(-1);
 }
 
-#triangle-bottomright::before {
+#about-triangle-bottomright::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -20,20 +21,21 @@
   border-color: var(--quaternary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
-  animation-delay: 0.9s;
+  animation-delay: 0.4s;
 }
 
-#triangle-bottomright-accent {
+#about-triangle-bottomright-accent {
   position: absolute;
   width: 51vw;
   height: 61vh;
   bottom: 0;
-  right: 0;
+  left: 0;
   opacity: 0.9;
   z-index: -1;
+  transform: scaleX(-1);
 }
 
-#triangle-bottomright-accent::before {
+#about-triangle-bottomright-accent::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -43,19 +45,20 @@
   border-color: var(--primary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
-  animation-delay: 0.9s;
+  animation-delay: 0.7s;
 }
 
-#triangle-topright {
+#about-triangle-topright {
   position: absolute;
   width: 50vw;
   height: 60vh;
   top: 0;
-  right: 0;
+  left: 0;
   opacity: 0.98;
+  transform: scaleX(-1);
 }
 
-#triangle-topright::before {
+#about-triangle-topright::before {
   content: "";
   position: absolute;
   top: 0;
@@ -65,20 +68,21 @@
   border-color: var(--quaternary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.3s;
 }
 
-#triangle-topright-accent {
+#about-triangle-topright-accent {
   position: absolute;
   width: 51vw;
   height: 61vh;
   top: 0;
-  right: 0;
+  left: 0;
   opacity: 0.9;
   z-index: -1;
+  transform: scaleX(-1);
 }
 
-#triangle-topright-accent::before {
+#about-triangle-topright-accent::before {
   content: "";
   position: absolute;
   top: 0;
@@ -88,20 +92,19 @@
   border-color: var(--tertiary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.6s;
 }
 
-#triangle-topleft {
+#about-triangle-topleft {
   position: absolute;
   width: 50vw;
   height: 60vh;
   top: 0;
-  left: -40vw;
+  right: -40dvw;
   opacity: 0.98;
-  transform: scaleX(-1);
 }
 
-#triangle-topleft::before {
+#about-triangle-topleft::before {
   content: "";
   position: absolute;
   top: 0;
@@ -111,21 +114,20 @@
   border-color: transparent var(--quaternary-color) transparent transparent;
   opacity: 0;
   animation: slideLeft 0.75s ease forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.4s;
 }
 
-#triangle-topleft-accent {
+#about-triangle-topleft-accent {
   position: absolute;
   width: 51vw;
   height: 61vh;
   top: 0;
-  left: -40vw;
+  right: -40vw;
   opacity: 0.9;
   z-index: -1;
-  transform: scaleX(-1);
 }
 
-#triangle-topleft-accent::before {
+#about-triangle-topleft-accent::before {
   content: "";
   position: absolute;
   top: 0;
@@ -135,24 +137,40 @@
   border-color: transparent var(--tertiary-color) transparent transparent;
   opacity: 0;
   animation: slideLeft 0.75s ease forwards;
-  animation-delay: 0.8s;
+  animation-delay: 0.1s;
+}
+
+.about-container {
+  display: contents;
+  top: 0;
 }
 
 .about {
   display: flex;
+  height: 100vh;
+  width: 95vw;
   justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 85vh;
   color: white;
   text-align: center;
-  padding: 0;
+  align-items: center;
+  margin: auto;
 }
 
 .about-content {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0;
+  min-height: 601px;
+}
+
+.about-content-inner {
+  border: 2px solid var(--primary-color);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 5px;
+  transition: all 2s ease 10s;
 }
 
 .about-content h1 {
@@ -198,47 +216,36 @@
   body {
     overflow: auto;
   }
-  #triangle-bottomright {
-    position: fixed;
-    bottom: 0;
-    right: 0;
+
+  #about-triangle-topleft {
+    left: -20vw;
   }
-  #triangle-bottomright-accent {
-    position: fixed;
-    bottom: 0;
-    right: 0;
+
+  #about-triangle-topleft-accent {
+    left: -19.5vw;
   }
-  #triangle-topright {
-    position: fixed;
-    top: 0;
-    right: 0;
+
+  #about-triangle-bottomright::before {
+    border-width: 0 0 79vh 79vw;
   }
-  #triangle-topright-accent {
-    position: fixed;
-    top: 0;
-    right: 0;
+
+  #about-triangle-bottomright-accent::before {
+    border-width: 0 0 80vh 80vw;
   }
-  #triangle-topleft {
-    position: fixed;
-    top: 0;
-    left: -3rem;
-  }
-  #triangle-topleft-accent {
-    position: fixed;
-    top: 0;
-    left: -2.75rem;
-  }
+
   .about {
-    height: 195vh;
-    scale: 0.8;
+    margin-top: 50px;
+    align-items: normal;
+    width: 90dvw;
   }
+
+  .about-typed {
+    font-size: 18px !important;
+  }
+
   .about-img {
     position: static;
-  }
-  .about-content {
-    min-height: 1270px !important;
-  }
-  .about-content p {
-    text-align: center;
+    z-index: 100;
+    scale: 0.9;
   }
 }

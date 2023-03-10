@@ -1,14 +1,13 @@
 @import url("../../variables.css");
 
 .header {
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  padding: 20px 10%;
+  right: 0;
   background: transparent;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   z-index: 999;
 }
@@ -134,8 +133,8 @@
   }
   button {
     margin: 0 !important;
-    padding-left: 0.2rem;
-    padding-right: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     font-size: 18px !important;
   }
 }

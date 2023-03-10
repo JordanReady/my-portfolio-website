@@ -2,8 +2,6 @@
 @import url("./animations.css");
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: "Grandstander", cursive;
 }
@@ -13,14 +11,14 @@ body {
   color: white !important;
 }
 
-.background img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.4;
-  object-fit: cover !important;
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.section {
+  flex-grow: 1;
 }
 
 @media screen and (min-width: 768px) {

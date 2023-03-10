@@ -24,7 +24,7 @@ body {
   border-color: var(--quaternary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
-  animation-delay: 1.9s;
+  animation-delay: 1.4s;
 }
 
 #triangle-bottomright-accent {
@@ -47,7 +47,7 @@ body {
   border-color: var(--primary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
-  animation-delay: 1.9s;
+  animation-delay: 1.7s;
 }
 
 #triangle-topright {
@@ -69,7 +69,7 @@ body {
   border-color: var(--quaternary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
-  animation-delay: 1.8s;
+  animation-delay: 1.3s;
 }
 
 #triangle-topright-accent {
@@ -92,7 +92,7 @@ body {
   border-color: var(--tertiary-color) transparent;
   opacity: 0;
   animation: slideRight 0.75s ease forwards;
-  animation-delay: 1.8s;
+  animation-delay: 1.6s;
 }
 
 #triangle-topleft {
@@ -115,7 +115,7 @@ body {
   border-color: transparent var(--quaternary-color) transparent transparent;
   opacity: 0;
   animation: slideLeft 0.75s ease forwards;
-  animation-delay: 1.8s;
+  animation-delay: 1.4s;
 }
 
 #triangle-topleft-accent {
@@ -139,18 +139,18 @@ body {
   border-color: transparent var(--tertiary-color) transparent transparent;
   opacity: 0;
   animation: slideLeft 0.75s ease forwards;
-  animation-delay: 1.8s;
+  animation-delay: 1.1s;
 }
 
 .hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
-  height: 85vh;
+  height: 100vh;
   color: white;
+  align-items: center;
   text-align: center;
-  padding: 0;
+  margin: auto;
 }
 
 .hero-content {
@@ -244,7 +244,6 @@ body {
 
 @media screen and (max-width: 768px) {
   .hero {
-    height: auto;
     scale: 0.75;
   }
   .hero-content p {

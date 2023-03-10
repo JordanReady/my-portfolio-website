@@ -38,13 +38,6 @@ export default function Navbar(props: NavbarProps) {
           <i className="bx bx-info-circle"></i> About
         </button>
         <button
-          style={{ "--i": "3" } as ButtonStyle}
-          className={activeIndex === 2 ? "active" : ""}
-          onClick={() => handleIndex(2)}
-        >
-          <i className="bx bxs-graduation"></i> Skills
-        </button>
-        <button
           style={{ "--i": "4" } as ButtonStyle}
           className={activeIndex === 3 ? "active" : ""}
           onClick={() => handleIndex(3)}
