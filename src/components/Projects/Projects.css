@@ -159,23 +159,80 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(75, 74, 74, 0.062);
+  background-color: rgba(228, 228, 228, 0.062);
   backdrop-filter: blur(5px);
   border: 1px solid var(--primary-color);
   border-radius: 10px;
   z-index: 1;
   padding: 10px;
-  max-height: 290px;
   overflow: hidden;
+  height: 290px;
   transform-origin: top;
   transition: all 0.35s ease-in-out;
+  opacity: 0;
+  animation: slideTop 0.75s ease forwards;
+  animation-delay: calc(0.3s + 0.2s * var(--i));
 }
 
 .project-tile:hover {
-  transform: translate3d(0, -10px, 0);
-  background-color: rgba(62, 39, 222, 0.5);
+  background-color: rgba(44, 44, 44, 0.5);
   box-shadow: 0 0 10px 0 var(--primary-color);
+  max-height: 450px;
+  height: 450px;
+  border: 1px solid var(--tertiary-color);
   z-index: 10;
+  justify-content: center;
+  align-items: center;
+  transition: ease-in-out 0.5s;
+  scale: 1.2;
+}
+
+.tile:hover .tile-icon {
+  opacity: 1 !important;
+  color: black;
+}
+
+.tile-icon {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100px;
+  height: 80px;
+  border: 1px solid var(--primary-color);
+  box-shadow: 0 0 10px 0 var(--primary-color);
+  opacity: 1;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  transition: all 0.5s ease-in-out;
+  border-bottom-right-radius: 100%;
+  border-top-left-radius: 10%;
+  opacity: 0;
+}
+
+/* make a vissually appealing hover effect for .tile-icon */
+
+.tile-icon:hover {
+  box-shadow: 0 0 50px 0 var(--primary-color);
+  transform: scale(1.2); /* increase size by 20% */
+  transition: all 0.2s ease-in-out;
+}
+
+.tile-icon:hover a {
+  text-shadow: 0 0 10px 0 var(--primary-color);
+  transition: all 0.5s ease-in-out;
+}
+
+.tile-icon a {
+  position: relative;
+  font-size: 18px;
+  top: 10px;
+  left: 10px;
+  color: var(--primary-color);
+  text-decoration: none;
+  text-align: left;
+  margin: 0;
+  padding: 0;
 }
 
 .chess-title::before {
@@ -187,7 +244,6 @@
   bottom: 0;
   z-index: -1;
   background-color: rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(5px);
 }
 
 .airbnb-title::before {
@@ -210,17 +266,6 @@
   bottom: 0;
   z-index: -1;
   background-color: rgba(0, 0, 0, 0.3);
-}
-
-.tile:hover {
-  height: 500px;
-  max-height: 500px;
-  z-index: 10;
-  justify-content: center;
-  scale: 1.2;
-
-  border: 1px solid var(--tertiary-color);
-  opacity: 1;
 }
 
 .preview-project-title {
@@ -280,6 +325,10 @@
 }
 
 .expanded .preview-technologies-container {
+  display: none;
+}
+
+.expanded .tile-icon {
   display: none;
 }
 
@@ -359,7 +408,7 @@
   font-size: 30px;
   margin: 0;
   padding: 0;
-  color: var(--primary-color);
+  color: white;
   text-shadow: var(--qu) 0px 0px 1px;
   text-align: left;
   margin-left: 10px;
@@ -383,7 +432,7 @@
   font-size: 30px;
   margin: 0;
   padding: 0;
-  color: var(--primary-color);
+  color: white;
   text-shadow: var(--qu) 0px 0px 1px;
   text-align: center;
   margin-left: 10px;
@@ -414,17 +463,16 @@
 /* scrollbar track */
 
 @media screen and (max-width: 768px) {
-  body {
-    overflow: auto;
-  }
   .projects {
     flex-direction: row;
+    overflow-y: scroll;
   }
 
   .projects-inner-container {
     height: 100vh;
     width: 100vw;
     padding-top: 80px;
+    overflow: auto;
   }
 
   .project-img-container {
@@ -471,6 +519,7 @@
 
   .project-description-container {
     padding: 0px;
+    height: 29dvh;
   }
 
   .project-description {
@@ -479,7 +528,7 @@
     margin: 0;
     padding-top: 5px;
     padding-bottom: 40px;
-    height: 35dvh;
+    padding-bottom: 40px;
   }
 
   .project-description-header {

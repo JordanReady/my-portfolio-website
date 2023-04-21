@@ -90,7 +90,7 @@ export default function Projects() {
             key={1}
             style={{ "--i": "1" } as ProjectStyle}
             onClick={() => expandTile(1)}
-            className={`col-md-4 project-col mx-1 ${
+            className={`col-md-4 project-col mx-1 tile ${
               expandedTile === 1
                 ? "expanded"
                 : expandedTile === 0
@@ -103,15 +103,21 @@ export default function Projects() {
               <p className="preview-project-description">
                 Multiplayer chess learning platform
               </p>
-              <li className="preview-technologies-container">
+              <div className="preview-technologies-container">
                 <li className="preview-technologies-title">Technologies:</li>
                 <li>React</li>
                 <li>Ruby on Rails</li>
                 <li>ActionCable Websocket</li>
                 <li>chess.js</li>
                 <li>react-chessboard</li>
+                <li>Bootstrap</li>
                 <li>Heroku</li>
-              </li>
+              </div>
+              <div className="tile-icon">
+                <a href="https://the-knights-den.herokuapp.com" target="blank">
+                  Visit Live Site!
+                </a>
+              </div>
             </div>
             {expandedTile === 1 && (
               <div>
@@ -150,6 +156,9 @@ export default function Projects() {
                   </div>
                 </div>
                 <div className="expanded-controls">
+                  <button className="expanded-button live-site">
+                    Live Site
+                  </button>
                   <a className="expanded-link" href="" target="blank">
                     Github
                   </a>
@@ -160,9 +169,9 @@ export default function Projects() {
           </div>
           <div
             key={2}
-            style={{ "--i": "1" } as ProjectStyle}
+            style={{ "--i": "2" } as ProjectStyle}
             onClick={() => expandTile(2)}
-            className={`col-md-4 mx-1 airbnb-title ${
+            className={`col-md-4 mx-1 tile airbnb-title ${
               expandedTile === 2
                 ? "expanded"
                 : expandedTile === 0
@@ -174,20 +183,20 @@ export default function Projects() {
             <p className="preview-project-description">
               Booking platform for vacation rentals
             </p>
-            <li className="preview-technologies-container">
+            <div className="preview-technologies-container">
               <li className="preview-technologies-title">Technologies:</li>
               <li>React</li>
               <li>Ruby on Rails</li>
-              <li>ActionCable Websocket</li>
-              <li>chess.js</li>
-              <li>react-chessboard</li>
+              <li>AWS S3</li>
+              <li>Stripe Webhooks</li>
+              <li>Bootstrap</li>
               <li>Heroku</li>
-            </li>
+            </div>
             {expandedTile === 2 && (
               <div>
                 <div className="row expanded-project-row">
                   <div className="col-md-7 project-img-container">
-                    <h3 className="expanded-project-title">Chess App</h3>
+                    <h3 className="expanded-project-title">AirBnb Clone</h3>
                     <img
                       className="project-img img-fluid"
                       src={chessImgs}
@@ -228,9 +237,9 @@ export default function Projects() {
           </div>
           <div
             key={3}
-            style={{ "--i": "1" } as ProjectStyle}
+            style={{ "--i": "3" } as ProjectStyle}
             onClick={() => expandTile(3)}
-            className={`col-md-4 mx-1 twitter-title ${
+            className={`col-md-4 mx-1 twitter-title tile ${
               expandedTile === 3
                 ? "expanded"
                 : expandedTile === 0
@@ -238,11 +247,11 @@ export default function Projects() {
                 : "d-none"
             }`}
           >
-            <h3 className="preview-project-title">Chess App</h3>
+            <h3 className="preview-project-title">Twitter Clone</h3>
             <p className="preview-project-description">
-              Multiplayer chess learning platform
+              Social media platform for sharing thoughts and ideas
             </p>
-            <li className="preview-technologies-container">
+            <div className="preview-technologies-container">
               <li className="preview-technologies-title">Technologies:</li>
               <li>React</li>
               <li>Ruby on Rails</li>
@@ -250,12 +259,12 @@ export default function Projects() {
               <li>chess.js</li>
               <li>react-chessboard</li>
               <li>Heroku</li>
-            </li>
+            </div>
             {expandedTile === 3 && (
               <div>
                 <div className="row expanded-project-row">
                   <div className="col-md-7 project-img-container">
-                    <h3 className="expanded-project-title">Chess App</h3>
+                    <h3 className="expanded-project-title">Twitter Clone</h3>
                     <img
                       className="project-img img-fluid"
                       src={chessImgs}
