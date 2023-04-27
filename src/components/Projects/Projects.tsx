@@ -6,11 +6,18 @@ import ChessAppImg3 from "../../assets/chess-app-4.png";
 import AirBnbImg from "../../assets/gaming-tp-1.png";
 import AirBnbImg2 from "../../assets/hiking-tp.png";
 import AirBnbImg3 from "../../assets/rock-climbing-tp-2.png";
-import TwitterImg from "../../assets/chess-app-2.png";
-import TwitterImg2 from "../../assets/chess-app-3.png";
-import TwitterImg3 from "../../assets/chess-app-4.png";
+import TwitterImg from "../../assets/twitter_app_1.png";
+import TwitterImg2 from "../../assets/twitter_app_2.png";
+import TwitterImg3 from "../../assets/twitter_app_3.png";
+import AppleImg from "../../assets/apple_landing_page.png";
+import AirBnbNewsImg from "../../assets/airbnb_news_clone_1.png";
+import AirBnbNewsImg2 from "../../assets/airbnb_news_clone_2.png";
+import AirBnbNewsImg3 from "../../assets/airbnb_news_clone_3.png";
+import NewsWeekImg from "../../assets/newsweek_home_page.png";
 
 import "./Projects.css";
+import Frontend from "./frontend";
+import Fullstack from "./fullstack";
 
 interface ProjectStyle extends React.CSSProperties {
   "--i": string;
@@ -21,6 +28,11 @@ export default function Projects() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [chessImgs, setChessImgs] = useState(ChessAppImg);
   const [airBnbImgs, setAirBnbImgs] = useState(AirBnbImg);
+  const [twitterImgs, setTwitterImgs] = useState(TwitterImg);
+  const [appleLandingPageImgs, setAppleLandingPageImgs] = useState(AppleImg);
+  const [airBnbNewsImgs, setAirBnbNewsImgs] = useState(AirBnbImg);
+  const [newsWeekImgs, setNewsWeekImgs] = useState(NewsWeekImg);
+  const [projectType, setProjectType] = useState("fullstack");
 
   useEffect(() => {
     window.addEventListener("resize", () => {
@@ -50,6 +62,26 @@ export default function Projects() {
 
   useEffect(() => {
     const interval = setInterval(() => {
+      switch (twitterImgs) {
+        case TwitterImg:
+          setTwitterImgs(TwitterImg2);
+          break;
+        case TwitterImg2:
+          setTwitterImgs(TwitterImg3);
+          break;
+        case TwitterImg3:
+          setTwitterImgs(TwitterImg);
+          break;
+        default:
+          setTwitterImgs(TwitterImg);
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [expandedTile, twitterImgs]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
       switch (chessImgs) {
         case ChessAppImg:
           setChessImgs(ChessAppImg2);
@@ -68,10 +100,37 @@ export default function Projects() {
     return () => clearInterval(interval);
   }, [expandedTile, chessImgs]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      switch (airBnbNewsImgs) {
+        case AirBnbNewsImg:
+          setAirBnbNewsImgs(AirBnbNewsImg2);
+          break;
+        case AirBnbNewsImg2:
+          setAirBnbNewsImgs(AirBnbNewsImg3);
+          break;
+        case AirBnbNewsImg3:
+          setAirBnbNewsImgs(AirBnbNewsImg);
+          break;
+        default:
+          setAirBnbNewsImgs(AirBnbNewsImg);
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [expandedTile, airBnbNewsImgs]);
+
   function expandTile(key: number) {
     if (expandedTile === key) {
       setExpandedTile(0);
     } else setExpandedTile(key);
+  }
+
+  function handleProjectType(e: any) {
+    if (e.target.id === "fullstack") {
+      setProjectType("fullstack");
+    } else setProjectType("frontend");
+    console.log(projectType);
   }
 
   return (
@@ -85,227 +144,49 @@ export default function Projects() {
         <div id="projects-triangle-topleft-accent"></div>
       </div>
       <div className="projects-inner-container">
-        <div className={`col-md-4 projects ${screenWidth < 768 ? "row" : ""}`}>
-          <div
-            key={1}
-            style={{ "--i": "1" } as ProjectStyle}
-            onClick={() => expandTile(1)}
-            className={`col-md-4 project-col mx-1 tile ${
-              expandedTile === 1
-                ? "expanded"
-                : expandedTile === 0
-                ? "project-tile"
-                : "d-none"
+        <div
+          className={`project-type-btn-container ${
+            expandedTile >= 1 ? "d-none" : ""
+          } `}
+        >
+          <button
+            id="fullstack"
+            className={`btn project-btn ${
+              projectType === "fullstack" ? "active-project-btn" : ""
             }`}
+            onClick={handleProjectType}
           >
-            <div className="chess-title">
-              <h3 className="preview-project-title">Chess App</h3>
-              <p className="preview-project-description">
-                Multiplayer chess learning platform
-              </p>
-              <div className="preview-technologies-container">
-                <li className="preview-technologies-title">Technologies:</li>
-                <li>React</li>
-                <li>Ruby on Rails</li>
-                <li>ActionCable Websocket</li>
-                <li>chess.js</li>
-                <li>react-chessboard</li>
-                <li>Bootstrap</li>
-                <li>Heroku</li>
-              </div>
-              <div className="tile-icon">
-                <a href="https://the-knights-den.herokuapp.com" target="blank">
-                  Visit Live Site!
-                </a>
-              </div>
-            </div>
-            {expandedTile === 1 && (
-              <div>
-                <div className="row expanded-project-row">
-                  <div className="col-md-7 project-img-container">
-                    <h3 className="expanded-project-title">Chess App</h3>
-                    <img
-                      className="project-img img-fluid"
-                      src={chessImgs}
-                      alt="project-1-screenshot"
-                    />
-                  </div>
-                  <div className="col-md-5 project-description-container">
-                    <h3 className="project-description-header">
-                      Project Description
-                    </h3>
-                    <p className="project-description">
-                      The Knight's Den is a web application designed for
-                      beginners who want to learn and play chess in a fun and
-                      interactive way. Users can create an account and login to
-                      access a variety of features including interactive lessons
-                      to improve their skills, play against a bot with different
-                      levels of difficulty, and challenge their friends online
-                      in real time games. After the games, users can analyze the
-                      replay and review their statistics to track their progress
-                      over time. With its user-friendly interface and
-                      educational resources, The Knight's Den is the perfect
-                      platform for chess enthusiasts of all skill levels to
-                      develop their abilities and enjoy the game. It was built
-                      using Ruby on Rails for the backend, ActionCable for
-                      websockets, and React for the frontend, and hosted on
-                      Heroku.It was built using Ruby on Rails for the backend,
-                      ActionCable for websockets, and React for the frontend,
-                      and hosted on Heroku.
-                    </p>
-                  </div>
-                </div>
-                <div className="expanded-controls">
-                  <button className="expanded-button live-site">
-                    Live Site
-                  </button>
-                  <a className="expanded-link" href="" target="blank">
-                    Github
-                  </a>
-                  <button className="expanded-button">back</button>
-                </div>
-              </div>
-            )}
-          </div>
-          <div
-            key={2}
-            style={{ "--i": "2" } as ProjectStyle}
-            onClick={() => expandTile(2)}
-            className={`col-md-4 mx-1 tile airbnb-title ${
-              expandedTile === 2
-                ? "expanded"
-                : expandedTile === 0
-                ? "project-tile"
-                : "d-none"
+            Full-Stack
+          </button>
+          <button
+            id="frontend"
+            className={`btn project-btn ${
+              projectType === "frontend" ? "active-project-btn" : ""
             }`}
+            onClick={handleProjectType}
           >
-            <h3 className="preview-project-title">AirBnb Clone</h3>
-            <p className="preview-project-description">
-              Booking platform for vacation rentals
-            </p>
-            <div className="preview-technologies-container">
-              <li className="preview-technologies-title">Technologies:</li>
-              <li>React</li>
-              <li>Ruby on Rails</li>
-              <li>AWS S3</li>
-              <li>Stripe Webhooks</li>
-              <li>Bootstrap</li>
-              <li>Heroku</li>
-            </div>
-            {expandedTile === 2 && (
-              <div>
-                <div className="row expanded-project-row">
-                  <div className="col-md-7 project-img-container">
-                    <h3 className="expanded-project-title">AirBnb Clone</h3>
-                    <img
-                      className="project-img img-fluid"
-                      src={chessImgs}
-                      alt="project-1-screenshot"
-                    />
-                  </div>
-                  <div className="col-md-5 project-description-container">
-                    <h3 className="project-description-header">
-                      Project Description
-                    </h3>
-                    <p className="project-description">
-                      The Knight's Den is a web application designed for
-                      beginners who want to learn and play chess in a fun and
-                      interactive way. Users can create an account and login to
-                      access a variety of features including interactive lessons
-                      to improve their skills, play against a bot with different
-                      levels of difficulty, and challenge their friends online
-                      in real time games. After the games, users can analyze the
-                      replay and review their statistics to track their progress
-                      over time. With its user-friendly interface and
-                      educational resources, The Knight's Den is the perfect
-                      platform for chess enthusiasts of all skill levels to
-                      develop their abilities and enjoy the game. It was built
-                      using Ruby on Rails for the backend, ActionCable for
-                      websockets, and React for the frontend, and hosted on
-                      Heroku.
-                    </p>
-                  </div>
-                </div>
-                <div className="expanded-controls">
-                  <a className="expanded-link" href="" target="blank">
-                    Github
-                  </a>
-                  <button className="expanded-button">back</button>
-                </div>
-              </div>
-            )}
-          </div>
-          <div
-            key={3}
-            style={{ "--i": "3" } as ProjectStyle}
-            onClick={() => expandTile(3)}
-            className={`col-md-4 mx-1 twitter-title tile ${
-              expandedTile === 3
-                ? "expanded"
-                : expandedTile === 0
-                ? "project-tile"
-                : "d-none"
-            }`}
-          >
-            <h3 className="preview-project-title">Twitter Clone</h3>
-            <p className="preview-project-description">
-              Social media platform for sharing thoughts and ideas
-            </p>
-            <div className="preview-technologies-container">
-              <li className="preview-technologies-title">Technologies:</li>
-              <li>React</li>
-              <li>Ruby on Rails</li>
-              <li>ActionCable Websocket</li>
-              <li>chess.js</li>
-              <li>react-chessboard</li>
-              <li>Heroku</li>
-            </div>
-            {expandedTile === 3 && (
-              <div>
-                <div className="row expanded-project-row">
-                  <div className="col-md-7 project-img-container">
-                    <h3 className="expanded-project-title">Twitter Clone</h3>
-                    <img
-                      className="project-img img-fluid"
-                      src={chessImgs}
-                      alt="project-1-screenshot"
-                    />
-                  </div>
-                  <div className="col-md-5 project-description-container">
-                    <h3 className="project-description-header">
-                      Project Description
-                    </h3>
-                    <p className="project-description">
-                      The Knight's Den is a web application designed for
-                      beginners who want to learn and play chess in a fun and
-                      interactive way. Users can create an account and login to
-                      access a variety of features including interactive lessons
-                      to improve their skills, play against a bot with different
-                      levels of difficulty, and challenge their friends online
-                      in real time games. After the games, users can analyze the
-                      replay and review their statistics to track their progress
-                      over time. With its user-friendly interface and
-                      educational resources, The Knight's Den is the perfect
-                      platform for chess enthusiasts of all skill levels to
-                      develop their abilities and enjoy the game. It was built
-                      using Ruby on Rails for the backend, ActionCable for
-                      websockets, and React for the frontend, and hosted on
-                      Heroku.It was built using Ruby on Rails for the backend,
-                      ActionCable for websockets, and React for the frontend,
-                      and hosted on Heroku.
-                    </p>
-                  </div>
-                </div>
-                <div className="expanded-controls">
-                  <a className="expanded-link" href="" target="blank">
-                    Github
-                  </a>
-                  <button className="expanded-button">back</button>
-                </div>
-              </div>
-            )}
-          </div>
+            Front-End
+          </button>
         </div>
+        {projectType === "fullstack" ? (
+          <Fullstack
+            screenWidth={screenWidth}
+            expandedTile={expandedTile}
+            expandTile={expandTile}
+            chessImgs={chessImgs}
+            airBnbImgs={airBnbImgs}
+            twitterImgs={twitterImgs}
+          />
+        ) : (
+          <Frontend
+            screenWidth={screenWidth}
+            expandedTile={expandedTile}
+            expandTile={expandTile}
+            appleImgs={appleLandingPageImgs}
+            airBnbNewsImgs={airBnbNewsImgs}
+            newsWeekImgs={newsWeekImgs}
+          />
+        )}
       </div>
     </div>
   );

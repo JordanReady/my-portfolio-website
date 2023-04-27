@@ -138,6 +138,63 @@
   animation-delay: 0.1s;
 }
 
+.project-type-btn-container {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  animation: slideTop 0.75s ease forwards;
+  animation-delay: 0.2s;
+  opacity: 0;
+}
+
+.project-type-btn-container::after {
+  content: "";
+  opacity: 1;
+  z-index: -1;
+}
+
+.project-btn {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  padding: 5px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.project-btn:hover {
+  background-color: var(--primary-color);
+  border: 1px solid white;
+  color: white;
+  cursor: default;
+}
+
+.active-project-btn {
+  background-color: var(--primary-color);
+  border: 1px solid white;
+  color: white;
+  box-shadow: 0 0 10px var(--primary-color);
+}
+
+.fade-out {
+  display: none;
+  opacity: 0;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.fade-in {
+  display: flex;
+  opacity: 1;
+  transition: all 0.2s ease-in-out !important;
+}
+
 .projects-container {
   display: contents;
   top: 0;
@@ -151,7 +208,6 @@
   color: white;
   text-align: center;
   align-items: center;
-
   margin: auto;
 }
 
@@ -175,11 +231,11 @@
 }
 
 .project-tile:hover {
-  background-color: rgba(44, 44, 44, 0.5);
-  box-shadow: 0 0 10px 0 var(--primary-color);
+  background-color: rgba(121, 121, 121, 0.5);
+  box-shadow: 0 0 20px 0 var(--primary-color);
   max-height: 450px;
   height: 450px;
-  border: 1px solid var(--tertiary-color);
+  border: 1px solid white;
   z-index: 10;
   justify-content: center;
   align-items: center;
@@ -210,11 +266,9 @@
   opacity: 0;
 }
 
-/* make a vissually appealing hover effect for .tile-icon */
-
 .tile-icon:hover {
   box-shadow: 0 0 50px 0 var(--primary-color);
-  transform: scale(1.2); /* increase size by 20% */
+  transform: scale(1.2);
   transition: all 0.2s ease-in-out;
 }
 
@@ -313,7 +367,7 @@
   max-height: 50dvh;
   width: 60dvw;
   overflow: hidden;
-  transition: all 0.8s ease;
+  transition: all 0.8s ease-in-out;
 }
 
 .expanded .preview-project-title {
@@ -354,7 +408,7 @@
   cursor: pointer;
   font-size: 10px;
   text-decoration: none;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease-in-out;
 }
 
 .expanded-link:hover {
@@ -376,7 +430,8 @@
   padding-bottom: 0;
   cursor: pointer;
   font-size: 10px;
-  transition: all 0.5s ease;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
 .expanded-button:hover {
@@ -460,12 +515,27 @@
   border-radius: 1px;
 }
 
-/* scrollbar track */
-
 @media screen and (max-width: 768px) {
+  .project-type-btn-container {
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  #fullstack {
+    margin-right: 10px !important;
+  }
+
+  #frontend {
+    margin-left: 10px !important;
+  }
+
   .projects {
     flex-direction: row;
     overflow-y: scroll;
+    height: 85vh;
   }
 
   .projects-inner-container {

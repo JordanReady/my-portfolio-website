@@ -230,6 +230,7 @@ body {
   text-decoration: none;
   color: #1f242d;
   background-color: var(--secondary-color);
+  border: 1px solid white;
   text-shadow: 0 0 1px #fff, 0 0 2px #fff, 0 0 3px #fff, 0 0 4px #ff00de,
     0 0 70px #ff00de, 0 0 80px #ff00de, 0 0 100px #ff00de;
   transition: all 0.3s ease-in-out;
