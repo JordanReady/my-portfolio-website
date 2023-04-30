@@ -32,6 +32,13 @@ export default function Navbar(props: NavbarProps) {
         </button>
         <button
           style={{ "--i": "2" } as ButtonStyle}
+          className={activeIndex === 3 ? "active" : ""}
+          onClick={() => handleIndex(3)}
+        >
+          <i className="bx bx-code-alt"></i> Projects
+        </button>
+        <button
+          style={{ "--i": "3" } as ButtonStyle}
           className={activeIndex === 1 ? "active" : ""}
           onClick={() => handleIndex(1)}
         >
@@ -39,13 +46,6 @@ export default function Navbar(props: NavbarProps) {
         </button>
         <button
           style={{ "--i": "4" } as ButtonStyle}
-          className={activeIndex === 3 ? "active" : ""}
-          onClick={() => handleIndex(3)}
-        >
-          <i className="bx bx-code-alt"></i> Projects
-        </button>
-        <button
-          style={{ "--i": "5" } as ButtonStyle}
           className={activeIndex === 4 ? "active" : ""}
           onClick={() => handleIndex(4)}
         >

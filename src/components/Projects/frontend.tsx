@@ -34,7 +34,11 @@ export default function Frontend(props: any) {
         : "d-none"
     }`}
       >
-        <div className="chess-title">
+        <div className="tile-triangle-topright"></div>
+        <div className="tile-triangle-topright-accent"></div>
+        <div className="tile-triangle-bottomleft"></div>
+        <div className="tile-triangle-bottomleft-accent"></div>
+        <div className="text-container">
           <h3 className="preview-project-title">AirBnb News Clone</h3>
           <p className="preview-project-description">
             Responsive AirBnb News website clone
@@ -109,7 +113,7 @@ export default function Frontend(props: any) {
         key={2}
         style={{ "--i": "2" } as ProjectStyle}
         onClick={() => expandTile(2)}
-        className={`col-md-4 mx-1 tile airbnb-title ${
+        className={`col-md-4 mx-1 tile ${
           expandedTile === 2
             ? "expanded"
             : expandedTile === 0
@@ -117,15 +121,21 @@ export default function Frontend(props: any) {
             : "d-none"
         } `}
       >
-        <h3 className="preview-project-title">NewsWeek Clone</h3>
-        <p className="preview-project-description">
-          Responsive NewsWeek website clone
-        </p>
-        <div className="preview-technologies-container">
-          <li className="preview-technologies-title">Technologies:</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Bootstrap</li>
+        <div className="tile-triangle-topright"></div>
+        <div className="tile-triangle-topright-accent"></div>
+        <div className="tile-triangle-bottomleft"></div>
+        <div className="tile-triangle-bottomleft-accent"></div>
+        <div className="text-container">
+          <h3 className="preview-project-title">NewsWeek Clone</h3>
+          <p className="preview-project-description">
+            Responsive NewsWeek website clone
+          </p>
+          <div className="preview-technologies-container">
+            <li className="preview-technologies-title">Technologies:</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Bootstrap</li>
+          </div>
         </div>
         {expandedTile === 2 && (
           <div>
@@ -190,15 +200,21 @@ export default function Frontend(props: any) {
             : "d-none"
         } `}
       >
-        <h3 className="preview-project-title">Apple Landing Page Clone</h3>
-        <p className="preview-project-description">
-          My very first HTML and CSS project
-        </p>
-        <div className="preview-technologies-container">
-          <li className="preview-technologies-title">Technologies:</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>Bootstrap</li>
+        <div className="tile-triangle-topright"></div>
+        <div className="tile-triangle-topright-accent"></div>
+        <div className="tile-triangle-bottomleft"></div>
+        <div className="tile-triangle-bottomleft-accent"></div>
+        <div className="text-container">
+          <h3 className="preview-project-title">Apple Landing Page Clone</h3>
+          <p className="preview-project-description">
+            My very first HTML and CSS project
+          </p>
+          <div className="preview-technologies-container">
+            <li className="preview-technologies-title">Technologies:</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Bootstrap</li>
+          </div>
         </div>
         {expandedTile === 3 && (
           <div>

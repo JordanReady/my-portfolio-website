@@ -227,7 +227,7 @@
   transition: all 0.35s ease-in-out;
   opacity: 0;
   animation: slideTop 0.75s ease forwards;
-  animation-delay: calc(0.3s + 0.2s * var(--i));
+  animation-delay: calc(0.2s * var(--i));
 }
 
 .project-tile:hover {
@@ -243,83 +243,113 @@
   scale: 1.2;
 }
 
-.tile:hover .tile-icon {
-  opacity: 1 !important;
-  color: black;
+/* Tile animations */
+.tile {
+  position: relative;
 }
 
-.tile-icon {
+.tile:hover .tile-triangle-topright,
+.tile:hover .tile-triangle-topright-accent,
+.tile:hover .tile-triangle-bottomleft,
+.tile:hover .tile-triangle-bottomleft-accent {
+  opacity: 0.9 !important;
+}
+
+.tile-triangle-topright {
   position: absolute;
-  top: 0px;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 320px;
+  border-style: solid;
+  border-width: 0 0 200px 320px;
+  border-color: transparent transparent var(--quaternary-color) transparent;
+  transform: rotate(-90deg);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.tile-triangle-topright-accent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 210px;
+  height: 330px;
+  border-style: solid;
+  border-width: 0 0 210px 330px;
+  border-color: transparent transparent var(--primary-color) transparent;
+  transform: rotate(-90deg);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: -2;
+}
+
+.tile-triangle-bottomleft {
+  position: absolute;
+  top: 0;
   left: 0;
   width: 100px;
-  height: 80px;
-  border: 1px solid var(--primary-color);
-  box-shadow: 0 0 10px 0 var(--primary-color);
-  opacity: 1;
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  transition: all 0.5s ease-in-out;
-  border-bottom-right-radius: 100%;
-  border-top-left-radius: 10%;
+  height: 520px;
+  border-style: solid;
+  border-width: 0 0 100px 520px;
+  border-color: transparent transparent var(--quaternary-color) transparent;
+  transform: scaleX(-1) rotate(-90deg);
   opacity: 0;
-}
-
-.tile-icon:hover {
-  box-shadow: 0 0 50px 0 var(--primary-color);
-  transform: scale(1.2);
-  transition: all 0.2s ease-in-out;
-}
-
-.tile-icon:hover a {
-  text-shadow: 0 0 10px 0 var(--primary-color);
   transition: all 0.5s ease-in-out;
+  animation-delay: 0.5s;
 }
 
-.tile-icon a {
+.tile-triangle-bottomleft-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: 540px;
+  border-style: solid;
+  border-width: 0 0 110px 540px;
+  border-color: transparent transparent var(--tertiary-color) transparent;
+  transform: scaleX(-1) rotate(-90deg);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: -2;
+}
+
+.tile::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-width: 0 0 20vh 20vw; /* Adjust as needed */
+  border-style: solid;
+  border-color: var(--quaternary-color) transparent;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.tile:hover::before {
+  opacity: 0.95;
+  z-index: 1;
+}
+
+.tile::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-width: 0 0 21vh 21vw; /* Adjust as needed */
+  border-style: solid;
+  border-color: #3e27df transparent;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.tile:hover::after {
+  opacity: 1;
+}
+
+.text-container {
   position: relative;
-  font-size: 18px;
-  top: 10px;
-  left: 10px;
-  color: var(--primary-color);
-  text-decoration: none;
-  text-align: left;
-  margin: 0;
-  padding: 0;
-}
-
-.chess-title::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.airbnb-title::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.twitter-title::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
 .preview-project-title {
@@ -370,19 +400,30 @@
   transition: all 0.8s ease-in-out;
 }
 
-.expanded .preview-project-title {
-  display: none;
+.expanded:hover {
+  background-color: transparent !important;
 }
 
-.expanded .preview-project-description {
-  display: none;
+.expanded:hover::after {
+  opacity: 0 !important;
+  background-color: transparent !important;
+  z-index: -1;
 }
 
-.expanded .preview-technologies-container {
-  display: none;
+.expanded:hover::before {
+  opacity: 0 !important;
+  background-color: transparent !important;
+  z-index: -1;
 }
 
-.expanded .tile-icon {
+.expanded .preview-project-title,
+.expanded .preview-technologies-title,
+.expanded .preview-project-description,
+.expanded .preview-technologies-container,
+.expanded .tile-triangle-bottomleft,
+.expanded .tile-triangle-bottomleft-accent,
+.expanded .tile-triangle-topright,
+.expanded .tile-triangle-topright-accent {
   display: none;
 }
 

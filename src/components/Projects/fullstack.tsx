@@ -15,6 +15,24 @@ export default function Fullstack(props: any) {
     twitterImgs,
   } = props;
 
+  const visitSite = (num: string) => {
+    let url = "";
+    switch (num) {
+      case "1":
+        url = "https://the-knights-den.herokuapp.com";
+        break;
+      case "2":
+        url = "https://github.com/JordanReady-Codes/full_stack_airbnb_clone";
+        break;
+      case "3":
+        url = "https://github.com/JordanReady-Codes/full_stack_twitter_clone";
+        break;
+      default:
+        url = "https://github.com/JordanReady/bewd-twitter-advanced";
+    }
+    window.open(url, "_blank");
+  };
+
   return (
     <div
       className={`col-md-4 projects 
@@ -25,7 +43,7 @@ export default function Fullstack(props: any) {
         key={1}
         style={{ "--i": "1" } as ProjectStyle}
         onClick={() => expandTile(1)}
-        className={`col-md-4 project-col mx-1 tile 
+        className={`col-md-4 project-col mx-1 tile
         ${
           expandedTile === 1
             ? "expanded"
@@ -34,7 +52,11 @@ export default function Fullstack(props: any) {
             : "d-none"
         }`}
       >
-        <div className="chess-title">
+        <div className="tile-triangle-topright"></div>
+        <div className="tile-triangle-topright-accent"></div>
+        <div className="tile-triangle-bottomleft"></div>
+        <div className="tile-triangle-bottomleft-accent"></div>
+        <div className="text-container">
           <h3 className="preview-project-title">Chess App</h3>
           <p className="preview-project-description">
             Multiplayer chess learning platform
@@ -49,14 +71,6 @@ export default function Fullstack(props: any) {
             <li>Bootstrap</li>
             <li>Heroku</li>
           </div>
-          {/* <div className="tile-icon">
-              <a
-                href="https://the-knights-den.herokuapp.com"
-                target="blank"
-              >
-                Visit Live Site!
-              </a>
-            </div> */}
         </div>
         {expandedTile === 1 && (
           <div>
@@ -67,6 +81,7 @@ export default function Fullstack(props: any) {
                   className="project-img img-fluid"
                   src={chessImgs}
                   alt="project-1-screenshot"
+                  onClick={() => visitSite("1")}
                 />
               </div>
               <div className="col-md-5 project-description-container">
@@ -115,18 +130,24 @@ export default function Fullstack(props: any) {
             : "d-none"
         } `}
       >
-        <h3 className="preview-project-title">AirBnb Clone</h3>
-        <p className="preview-project-description">
-          Booking platform for vacation rentals
-        </p>
-        <div className="preview-technologies-container">
-          <li className="preview-technologies-title">Technologies:</li>
-          <li>React</li>
-          <li>Ruby on Rails</li>
-          <li>AWS S3</li>
-          <li>Stripe Webhooks</li>
-          <li>Bootstrap</li>
-          <li>Heroku</li>
+        <div className="tile-triangle-topright"></div>
+        <div className="tile-triangle-topright-accent"></div>
+        <div className="tile-triangle-bottomleft"></div>
+        <div className="tile-triangle-bottomleft-accent"></div>
+        <div className="text-container">
+          <h3 className="preview-project-title">AirBnb Clone</h3>
+          <p className="preview-project-description">
+            Booking platform for vacation rentals
+          </p>
+          <div className="preview-technologies-container">
+            <li className="preview-technologies-title">Technologies:</li>
+            <li>React</li>
+            <li>Ruby on Rails</li>
+            <li>AWS S3</li>
+            <li>Stripe Webhooks</li>
+            <li>Bootstrap</li>
+            <li>Heroku</li>
+          </div>
         </div>
         {expandedTile === 2 && (
           <div>
@@ -137,6 +158,7 @@ export default function Fullstack(props: any) {
                   className="project-img img-fluid"
                   src={chessImgs}
                   alt="project-1-screenshot"
+                  onClick={() => visitSite("2")}
                 />
               </div>
               <div className="col-md-5 project-description-container">
@@ -162,7 +184,11 @@ export default function Fullstack(props: any) {
               </div>
             </div>
             <div className="expanded-controls">
-              <a className="expanded-link" href="" target="blank">
+              <a
+                className="expanded-link"
+                href="https://github.com/JordanReady-Codes/full_stack_airbnb_clone"
+                target="blank"
+              >
                 Github
               </a>
               <button className="expanded-button">back</button>
@@ -182,15 +208,21 @@ export default function Fullstack(props: any) {
             : "d-none"
         } `}
       >
-        <h3 className="preview-project-title">Twitter Clone</h3>
-        <p className="preview-project-description">
-          Social media platform for sharing thoughts and ideas
-        </p>
-        <div className="preview-technologies-container">
-          <li className="preview-technologies-title">Technologies:</li>
-          <li>React</li>
-          <li>Ruby on Rails</li>
-          <li>Heroku</li>
+        <div className="tile-triangle-topright"></div>
+        <div className="tile-triangle-topright-accent"></div>
+        <div className="tile-triangle-bottomleft"></div>
+        <div className="tile-triangle-bottomleft-accent"></div>
+        <div className="text-container">
+          <h3 className="preview-project-title">Twitter Clone</h3>
+          <p className="preview-project-description">
+            Social media platform for sharing thoughts and ideas
+          </p>
+          <div className="preview-technologies-container">
+            <li className="preview-technologies-title">Technologies:</li>
+            <li>React</li>
+            <li>Ruby on Rails</li>
+            <li>Heroku</li>
+          </div>
         </div>
         {expandedTile === 3 && (
           <div>
@@ -201,6 +233,7 @@ export default function Fullstack(props: any) {
                   className="project-img img-fluid"
                   src={twitterImgs}
                   alt="project-1-screenshot"
+                  onClick={() => visitSite("3")}
                 />
               </div>
               <div className="col-md-5 project-description-container">
@@ -222,7 +255,7 @@ export default function Fullstack(props: any) {
             <div className="expanded-controls">
               <a
                 className="expanded-link"
-                href="https://github.com/JordanReady/bewd-twitter-advanced"
+                href="https://github.com/JordanReady-Codes/full_stack_twitter_clone"
                 target="blank"
               >
                 Github
