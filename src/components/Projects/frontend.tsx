@@ -13,7 +13,26 @@ export default function Frontend(props: any) {
     appleImgs,
     airBnbNewsImgs,
     newsWeekImgs,
+    airBnbFrontendImgs,
   } = props;
+
+  const visitSite = (num: string) => {
+    let url = "";
+    switch (num) {
+      case "1":
+        url = "https://trusting-swirles-c46c81.netlify.app/";
+        break;
+      case "2":
+        url = "https://zen-jang-c45a43.netlify.app/";
+        break;
+      case "3":
+        url = "https://practical-sammet-ad0cb7.netlify.app";
+        break;
+      default:
+        url = "https://practical-sammet-ad0cb7.netlify.app/";
+    }
+    window.open(url, "_blank");
+  };
 
   return (
     <div
@@ -60,6 +79,7 @@ export default function Frontend(props: any) {
                   className="project-img img-fluid"
                   src={airBnbNewsImgs}
                   alt="project-1-screenshot"
+                  onClick={() => visitSite("1")}
                 />
               </div>
               <div className="col-md-5 project-description-container">
@@ -109,6 +129,7 @@ export default function Frontend(props: any) {
           </div>
         )}
       </div>
+
       <div
         key={2}
         style={{ "--i": "2" } as ProjectStyle}
@@ -146,6 +167,7 @@ export default function Frontend(props: any) {
                   className="project-img img-fluid"
                   src={newsWeekImgs}
                   alt="project-1-screenshot"
+                  onClick={() => visitSite("2")}
                 />
               </div>
               <div className="col-md-5 project-description-container">
@@ -205,9 +227,9 @@ export default function Frontend(props: any) {
         <div className="tile-triangle-bottomleft"></div>
         <div className="tile-triangle-bottomleft-accent"></div>
         <div className="text-container">
-          <h3 className="preview-project-title">Apple Landing Page Clone</h3>
+          <h3 className="preview-project-title">Booking Website Clone</h3>
           <p className="preview-project-description">
-            My very first HTML and CSS project
+            AirBnb booking website clone
           </p>
           <div className="preview-technologies-container">
             <li className="preview-technologies-title">Technologies:</li>
@@ -220,13 +242,12 @@ export default function Frontend(props: any) {
           <div>
             <div className="row expanded-project-row">
               <div className="col-md-7 project-img-container">
-                <h3 className="expanded-project-title">
-                  Apple Landing Page Clone
-                </h3>
+                <h3 className="expanded-project-title">AirBnb Website Clone</h3>
                 <img
                   className="project-img img-fluid"
-                  src={appleImgs}
+                  src={airBnbFrontendImgs}
                   alt="project-1-screenshot"
+                  onClick={() => visitSite("3")}
                 />
               </div>
               <div className="col-md-5 project-description-container">
@@ -234,15 +255,15 @@ export default function Frontend(props: any) {
                   Project Description
                 </h3>
                 <p className="project-description">
-                  The landing page includes a hero section with a prominent
-                  product image and a call-to-action button to learn more. Below
-                  the hero section, there is a brief description of the product
-                  and its features, accompanied by some images showcasing the
-                  product in use. The design of the page incorporates a lot of
-                  white space and minimalist typography to create a modern and
-                  sophisticated look. The color palette is kept simple, with
-                  mostly grayscale tones and occasional pops of color to draw
-                  attention to certain elements.
+                  This project is a clone of the Airbnb website's frontend,
+                  built using HTML, CSS, and Bootstrap. The site includes a
+                  user-friendly booking homes form, an engaging customer reviews
+                  section, and a homes available with top rated experiences
+                  section to help users find the best possible accommodations.
+                  These sections utilize bootstrap colomns and rows to create a
+                  responsive grid layout that adjusts to fit the screen size.
+                  The site also includes a footer with links to useful
+                  information and social media icons.
                 </p>
               </div>
             </div>

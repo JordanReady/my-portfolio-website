@@ -14,6 +14,9 @@ import AirBnbNewsImg from "../../assets/airbnb_news_clone_1.png";
 import AirBnbNewsImg2 from "../../assets/airbnb_news_clone_2.png";
 import AirBnbNewsImg3 from "../../assets/airbnb_news_clone_3.png";
 import NewsWeekImg from "../../assets/newsweek_home_page.png";
+import AirBnbFrontend from "../../assets/airbnb_frontend_1.png";
+import AirBnbFrontend2 from "../../assets/airbnb_frontend_2.png";
+import AirBnbFrontend3 from "../../assets/airbnb_frontend_3.png";
 
 import "./Projects.css";
 import Frontend from "./frontend";
@@ -28,6 +31,7 @@ export default function Projects() {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [chessImgs, setChessImgs] = useState(ChessAppImg);
   const [airBnbImgs, setAirBnbImgs] = useState(AirBnbImg);
+  const [airBnbFrontendImgs, setAirBnbFrontendImgs] = useState(AirBnbFrontend);
   const [twitterImgs, setTwitterImgs] = useState(TwitterImg);
   const [appleLandingPageImgs, setAppleLandingPageImgs] = useState(AppleImg);
   const [airBnbNewsImgs, setAirBnbNewsImgs] = useState(AirBnbImg);
@@ -39,6 +43,26 @@ export default function Projects() {
       setScreenWidth(window.innerWidth);
     });
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      switch (airBnbFrontendImgs) {
+        case AirBnbFrontend:
+          setAirBnbFrontendImgs(AirBnbFrontend2);
+          break;
+        case AirBnbFrontend2:
+          setAirBnbFrontendImgs(AirBnbFrontend3);
+          break;
+        case AirBnbFrontend3:
+          setAirBnbFrontendImgs(AirBnbFrontend);
+          break;
+        default:
+          setAirBnbFrontendImgs(AirBnbFrontend);
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [expandedTile, airBnbFrontendImgs]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -185,6 +209,7 @@ export default function Projects() {
             appleImgs={appleLandingPageImgs}
             airBnbNewsImgs={airBnbNewsImgs}
             newsWeekImgs={newsWeekImgs}
+            airBnbFrontendImgs={airBnbFrontendImgs}
           />
         )}
       </div>
