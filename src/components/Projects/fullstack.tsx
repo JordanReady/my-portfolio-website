@@ -166,20 +166,17 @@ export default function Fullstack(props: any) {
                   Project Description
                 </h3>
                 <p className="project-description">
-                  The Knight's Den is a web application designed for beginners
-                  who want to learn and play chess in a fun and interactive way.
-                  Users can create an account and login to access a variety of
-                  features including interactive lessons to improve their
-                  skills, play against a bot with different levels of
-                  difficulty, and challenge their friends online in real time
-                  games. After the games, users can analyze the replay and
-                  review their statistics to track their progress over time.
-                  With its user-friendly interface and educational resources,
-                  The Knight's Den is the perfect platform for chess enthusiasts
-                  of all skill levels to develop their abilities and enjoy the
-                  game. It was built using Ruby on Rails for the backend,
-                  ActionCable for websockets, and React for the frontend, and
-                  hosted on Heroku.
+                  The full-stack clone of Airbnb is a web application built with
+                  Rails and React. Users can sign up and log in to the platform,
+                  browse a comprehensive list of available properties, and book
+                  a property with check-in and check-out dates. To facilitate
+                  online payments, the application uses the Stripe API, allowing
+                  users to make secure transactions directly through the
+                  platform. The application also offers property owners the
+                  ability to create listings and view all bookings they have
+                  received for their properties. With webpacker added for React
+                  front-end views, the interface is smooth, intuitive, and
+                  highly responsive.
                 </p>
               </div>
             </div>

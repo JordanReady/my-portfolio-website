@@ -233,6 +233,10 @@
     border-width: 0 0 80vh 80vw;
   }
 
+  .about-container {
+    position: fixed;
+  }
+
   .about {
     margin-top: 50px;
     align-items: normal;

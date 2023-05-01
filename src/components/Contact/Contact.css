@@ -147,6 +147,7 @@
   height: 100vh;
   width: 100vw;
   padding-top: 80px;
+  overflow: hidden !important;
 }
 
 .contact-inner-container {
@@ -269,5 +270,8 @@
   .contact-btn {
     margin-top: 1rem !important;
     font-size: 1rem;
+  }
+  .contact-container {
+    position: fixed;
   }
 }

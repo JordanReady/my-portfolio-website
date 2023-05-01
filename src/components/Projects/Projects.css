@@ -606,7 +606,7 @@
   }
 
   .expanded-project-title {
-    font-size: 24px;
+    font-size: 20px;
     margin-left: 0;
     margin-top: 0;
   }
@@ -635,11 +635,10 @@
 
   .project-description {
     overflow: scroll;
-    font-size: 12px;
+    font-size: 11px;
+    height: 75vh;
     margin: 0;
     padding-top: 5px;
-    padding-bottom: 40px;
-    padding-bottom: 40px;
   }
 
   .project-description-header {

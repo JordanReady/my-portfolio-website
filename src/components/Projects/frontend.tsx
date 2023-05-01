@@ -58,7 +58,7 @@ export default function Frontend(props: any) {
         <div className="tile-triangle-bottomleft"></div>
         <div className="tile-triangle-bottomleft-accent"></div>
         <div className="text-container">
-          <h3 className="preview-project-title">AirBnb News Clone</h3>
+          <h3 className="preview-project-title">AirBnb Newsroom</h3>
           <p className="preview-project-description">
             Responsive AirBnb News website clone
           </p>
@@ -74,7 +74,7 @@ export default function Frontend(props: any) {
           <div>
             <div className="row expanded-project-row">
               <div className="col-md-7 project-img-container">
-                <h3 className="expanded-project-title">AirBnb News Clone</h3>
+                <h3 className="expanded-project-title">AirBnb Newsroom</h3>
                 <img
                   className="project-img img-fluid"
                   src={airBnbNewsImgs}
@@ -102,16 +102,13 @@ export default function Frontend(props: any) {
                   provide users with a clean and straightforward way to stay
                   up-to-date with Airbnb news. The responsive design ensures
                   that users can access the website from their desktop, tablet,
-                  or smartphone with ease. Overall, this project demonstrates
-                  the developer's ability to use Bootstrap to create a visually
-                  appealing and functional website that provides a positive user
-                  experience.
+                  or smartphone with ease.
                 </p>
               </div>
             </div>
             <div className="expanded-controls">
               <a
-                className="expanded-button"
+                className="expanded-button expanded-link"
                 href="https://trusting-swirles-c46c81.netlify.app/"
                 target="blank"
               >
@@ -192,7 +189,7 @@ export default function Frontend(props: any) {
             </div>
             <div className="expanded-controls">
               <a
-                className="expanded-button"
+                className="expanded-button expanded-link"
                 href="https://zen-jang-c45a43.netlify.app/#"
                 target="blank"
               >
@@ -269,7 +266,7 @@ export default function Frontend(props: any) {
             </div>
             <div className="expanded-controls">
               <a
-                className="expanded-button"
+                className="expanded-button expanded-link"
                 href="https://practical-sammet-ad0cb7.netlify.app/#"
                 target="blank"
               >
