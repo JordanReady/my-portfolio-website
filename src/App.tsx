@@ -18,7 +18,7 @@ function App() {
     setTimeout(() => {
       setActiveIndex(index);
       setShouldSlideOut(false);
-    }, 800);
+    }, 500);
   };
 
   useEffect(() => {

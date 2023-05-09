@@ -1,6 +1,12 @@
 @import url("../../variables.css");
 @import url("../../animations.css");
 
+.about-triangle-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
 #about-triangle-bottomright {
   position: absolute;
   width: 50vw;
@@ -95,13 +101,14 @@
   animation-delay: 0.6s;
 }
 
-#about-triangle-topleft {
+/* #about-triangle-topleft {
   position: absolute;
   width: 50vw;
   height: 60vh;
   top: 0;
   right: -40dvw;
   opacity: 0.98;
+  transform: scaleX(-1);
 }
 
 #about-triangle-topleft::before {
@@ -138,7 +145,7 @@
   opacity: 0;
   animation: slideLeft 0.75s ease forwards;
   animation-delay: 0.1s;
-}
+} */
 
 .about-container {
   display: contents;
