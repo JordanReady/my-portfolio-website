@@ -6,6 +6,7 @@ import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Contact from "./components/Contact/Contact";
+import ThankYou from "./components/Contact/ThankYou";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -21,9 +22,27 @@ function App() {
     }, 500);
   };
 
+  const navigateTo = (path: string) => {
+    window.history.pushState({}, "", path);
+    handlePathChange();
+  };
+
+  const handlePathChange = () => {
+    const path = window.location.pathname;
+    switch (path) {
+      case "/thank-you":
+        handleIndex(5);
+        break;
+      default:
+        handleIndex(0);
+    }
+  };
+
   useEffect(() => {
-    console.log("shouldSlideOut", shouldSlideOut);
-  }, [shouldSlideOut]);
+    handlePathChange();
+    window.addEventListener("popstate", handlePathChange);
+    return () => window.removeEventListener("popstate", handlePathChange);
+  }, []);
 
   const getSection = () => {
     switch (activeIndex) {
@@ -37,6 +56,8 @@ function App() {
         return <Projects />;
       case 4:
         return <Contact />;
+      case 5:
+        return <ThankYou />;
       default:
         return <Hero />;
     }
