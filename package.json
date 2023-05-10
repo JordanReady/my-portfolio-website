@@ -1,5 +1,5 @@
 {
-  "homepage": "https://jordanready.github.io/My-Portfolio-Website",
+  "homepage": "https://jordanready.github.io/my-portfolio-website/",
   "name": "my-portfolio-website",
   "private": true,
   "version": "0.0.0",
@@ -29,5 +29,8 @@
     "gh-pages": "^5.0.0",
     "typescript": "^4.9.3",
     "vite": "^4.1.0"
+  },
+  "vite": {
+    "src": "src"
   }
 }
