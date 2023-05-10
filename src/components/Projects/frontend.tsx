@@ -26,7 +26,8 @@ export default function Frontend(props: any) {
         url = "https://zen-jang-c45a43.netlify.app/";
         break;
       case "3":
-        url = "https://practical-sammet-ad0cb7.netlify.app";
+        url =
+          "https://645c288d2938fa1c3429ef57--endearing-otter-26c1ed.netlify.app/";
         break;
       default:
         url = "https://practical-sammet-ad0cb7.netlify.app/";
