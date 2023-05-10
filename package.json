@@ -1,8 +1,8 @@
 {
-  "homepage": "https://jordanready.github.io/my-portfolio-website/",
   "name": "my-portfolio-website",
+  "homepage": "https://JordanReady.github.io/my-portfolio-website/",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
