@@ -268,7 +268,7 @@ export default function Frontend(props: any) {
             <div className="expanded-controls">
               <a
                 className="expanded-button expanded-link"
-                href="https://practical-sammet-ad0cb7.netlify.app/#"
+                href="https://645c288d2938fa1c3429ef57--endearing-otter-26c1ed.netlify.app/"
                 target="blank"
               >
                 Live Site
