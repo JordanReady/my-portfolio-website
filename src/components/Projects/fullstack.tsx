@@ -106,6 +106,7 @@ export default function Fullstack(props: any) {
                   hosted on Heroku.It was built using Ruby on Rails for the
                   backend, ActionCable for websockets, and React for the
                   frontend, and hosted on Heroku.
+                  <div className="spacer"></div>
                 </p>
               </div>
             </div>
@@ -180,6 +181,7 @@ export default function Fullstack(props: any) {
                   received for their properties. With webpacker added for React
                   front-end views, the interface is smooth, intuitive, and
                   highly responsive.
+                  <div className="spacer"></div>
                 </p>
               </div>
             </div>
@@ -256,6 +258,7 @@ export default function Fullstack(props: any) {
                   their own tweets. Users can also browse a global feed of
                   tweets from all users, or navigate to a specific user's
                   profile to view only the tweets that user has made.
+                  <div className="spacer"></div>
                 </p>
               </div>
             </div>

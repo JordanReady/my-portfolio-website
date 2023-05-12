@@ -105,6 +105,7 @@ export default function Frontend(props: any) {
                   up-to-date with Airbnb news. The responsive design ensures
                   that users can access the website from their desktop, tablet,
                   or smartphone with ease.
+                  <div className="spacer"></div>
                 </p>
               </div>
             </div>
