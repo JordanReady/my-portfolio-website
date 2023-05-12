@@ -6,6 +6,11 @@
   font-family: "Grandstander", cursive;
 }
 
+/* Dark mode */
+:root {
+  color-scheme: only light;
+}
+
 body {
   background-color: #1f242d !important;
   color: white !important;
