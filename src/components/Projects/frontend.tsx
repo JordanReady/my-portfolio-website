@@ -14,6 +14,7 @@ export default function Frontend(props: any) {
     airBnbNewsImgs,
     newsWeekImgs,
     airBnbFrontendImgs,
+    resetImgs,
   } = props;
 
   const visitSite = (num: string) => {
@@ -122,7 +123,14 @@ export default function Frontend(props: any) {
               >
                 Github
               </a>
-              <button className="expanded-button">back</button>
+              <button
+                className="expanded-button"
+                onClick={() => {
+                  resetImgs();
+                }}
+              >
+                back
+              </button>
             </div>
           </div>
         )}
@@ -203,7 +211,14 @@ export default function Frontend(props: any) {
               >
                 Github
               </a>
-              <button className="expanded-button">back</button>
+              <button
+                className="expanded-button"
+                onClick={() => {
+                  resetImgs();
+                }}
+              >
+                back
+              </button>
             </div>
           </div>
         )}
@@ -280,7 +295,14 @@ export default function Frontend(props: any) {
               >
                 Github
               </a>
-              <button className="expanded-button">back</button>
+              <button
+                className="expanded-button"
+                onClick={() => {
+                  resetImgs();
+                }}
+              >
+                back
+              </button>
             </div>
           </div>
         )}

@@ -13,6 +13,7 @@ export default function Fullstack(props: any) {
     chessImgs,
     airBnbImgs,
     twitterImgs,
+    resetImgs,
   } = props;
 
   const visitSite = (num: string) => {
@@ -113,7 +114,9 @@ export default function Fullstack(props: any) {
               <a className="expanded-link" href="" target="blank">
                 Github
               </a>
-              <button className="expanded-button">back</button>
+              <button className="expanded-button" onClick={resetImgs}>
+                back
+              </button>
             </div>
           </div>
         )}
@@ -188,7 +191,14 @@ export default function Fullstack(props: any) {
               >
                 Github
               </a>
-              <button className="expanded-button">back</button>
+              <button
+                className="expanded-button"
+                onClick={() => {
+                  resetImgs();
+                }}
+              >
+                back
+              </button>
             </div>
           </div>
         )}
@@ -257,7 +267,14 @@ export default function Fullstack(props: any) {
               >
                 Github
               </a>
-              <button className="expanded-button">back</button>
+              <button
+                className="expanded-button"
+                onClick={() => {
+                  resetImgs();
+                }}
+              >
+                back
+              </button>
             </div>
           </div>
         )}

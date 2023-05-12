@@ -53,22 +53,25 @@ export default function Projects() {
     const interval = setInterval(() => {
       switch (FsAirBnbImgs) {
         case FsAirBnb:
-          setFsAirBnbImgs(FsAirBnb2);
+          setFsAirBnbImgs(FsAirBnb);
           break;
         case FsAirBnb2:
-          setFsAirBnbImgs(FsAirBnb3);
+          setFsAirBnbImgs(FsAirBnb2);
           break;
         case FsAirBnb3:
-          setFsAirBnbImgs(FsAirBnb1);
+          setFsAirBnbImgs(FsAirBnb3);
           break;
         case FsAirBnb1:
-          setFsAirBnbImgs(FsAirBnb);
+          setFsAirBnbImgs(FsAirBnb1);
           break;
         default:
           setFsAirBnbImgs(FsAirBnb);
       }
     }, 3000);
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+    };
   }, [expandedTile, FsAirBnbImgs]);
 
   useEffect(() => {
@@ -184,6 +187,16 @@ export default function Projects() {
     console.log(projectType);
   }
 
+  function resetImgs(e: any) {
+    setFsAirBnbImgs(FsAirBnb);
+    setChessImgs(ChessAppImg);
+    setAirBnbImgs(AirBnbImg);
+    setAirBnbFrontendImgs(AirBnbFrontend);
+    setTwitterImgs(TwitterImg);
+    setAirBnbNewsImgs(AirBnbImg);
+    setNewsWeekImgs(NewsWeekImg);
+  }
+
   return (
     <div className="container projects-container">
       <div className="triangle-container">
@@ -227,6 +240,7 @@ export default function Projects() {
             chessImgs={chessImgs}
             airBnbImgs={FsAirBnbImgs}
             twitterImgs={twitterImgs}
+            resetImgs={resetImgs}
           />
         ) : (
           <Frontend
@@ -237,6 +251,7 @@ export default function Projects() {
             airBnbNewsImgs={airBnbNewsImgs}
             newsWeekImgs={newsWeekImgs}
             airBnbFrontendImgs={airBnbFrontendImgs}
+            resetImgs={resetImgs}
           />
         )}
       </div>

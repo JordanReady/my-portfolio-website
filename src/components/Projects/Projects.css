@@ -227,7 +227,7 @@
   transition: all 0.35s ease-in-out;
   opacity: 0;
   animation: slideTop 0.75s ease forwards;
-  animation-delay: calc(0.2s * var(--i));
+  animation-delay: calc(0.3s * var(--i));
 }
 
 .project-tile:hover {
