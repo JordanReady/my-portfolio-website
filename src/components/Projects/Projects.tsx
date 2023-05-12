@@ -17,6 +17,10 @@ import NewsWeekImg from "../../assets/newsweek_home_page.png";
 import AirBnbFrontend from "../../assets/airbnb_frontend_1.png";
 import AirBnbFrontend2 from "../../assets/airbnb_frontend_2.png";
 import AirBnbFrontend3 from "../../assets/airbnb_frontend_3.png";
+import FsAirBnb from "../../assets/fs-airbnb-clone.png";
+import FsAirBnb2 from "../../assets/fs-airbnb-clone-2.png";
+import FsAirBnb3 from "../../assets/fs-airbnb-clone-3.png";
+import FsAirBnb1 from "../../assets/fs-airbnb-clone-1.png";
 
 import "./Projects.css";
 import Frontend from "./frontend";
@@ -36,6 +40,7 @@ export default function Projects() {
   const [appleLandingPageImgs, setAppleLandingPageImgs] = useState(AppleImg);
   const [airBnbNewsImgs, setAirBnbNewsImgs] = useState(AirBnbImg);
   const [newsWeekImgs, setNewsWeekImgs] = useState(NewsWeekImg);
+  const [FsAirBnbImgs, setFsAirBnbImgs] = useState(FsAirBnb);
   const [projectType, setProjectType] = useState("fullstack");
 
   useEffect(() => {
@@ -43,6 +48,28 @@ export default function Projects() {
       setScreenWidth(window.innerWidth);
     });
   }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      switch (FsAirBnbImgs) {
+        case FsAirBnb:
+          setFsAirBnbImgs(FsAirBnb2);
+          break;
+        case FsAirBnb2:
+          setFsAirBnbImgs(FsAirBnb3);
+          break;
+        case FsAirBnb3:
+          setFsAirBnbImgs(FsAirBnb1);
+          break;
+        case FsAirBnb1:
+          setFsAirBnbImgs(FsAirBnb);
+          break;
+        default:
+          setFsAirBnbImgs(FsAirBnb);
+      }
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [expandedTile, FsAirBnbImgs]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -198,7 +225,7 @@ export default function Projects() {
             expandedTile={expandedTile}
             expandTile={expandTile}
             chessImgs={chessImgs}
-            airBnbImgs={airBnbImgs}
+            airBnbImgs={FsAirBnbImgs}
             twitterImgs={twitterImgs}
           />
         ) : (

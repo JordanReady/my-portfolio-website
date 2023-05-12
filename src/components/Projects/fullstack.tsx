@@ -156,7 +156,7 @@ export default function Fullstack(props: any) {
                 <h3 className="expanded-project-title">AirBnb Clone</h3>
                 <img
                   className="project-img img-fluid"
-                  src={chessImgs}
+                  src={airBnbImgs}
                   alt="project-1-screenshot"
                   onClick={() => visitSite("2")}
                 />
