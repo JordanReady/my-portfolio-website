@@ -53,16 +53,16 @@ export default function Projects() {
     const interval = setInterval(() => {
       switch (FsAirBnbImgs) {
         case FsAirBnb:
-          setFsAirBnbImgs(FsAirBnb);
+          setFsAirBnbImgs(FsAirBnb1);
           break;
         case FsAirBnb2:
-          setFsAirBnbImgs(FsAirBnb2);
-          break;
-        case FsAirBnb3:
           setFsAirBnbImgs(FsAirBnb3);
           break;
+        case FsAirBnb3:
+          setFsAirBnbImgs(FsAirBnb);
+          break;
         case FsAirBnb1:
-          setFsAirBnbImgs(FsAirBnb1);
+          setFsAirBnbImgs(FsAirBnb2);
           break;
         default:
           setFsAirBnbImgs(FsAirBnb);
