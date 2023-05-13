@@ -676,4 +676,15 @@
   .about {
     flex-direction: row;
   }
+
+  .project-tile:hover {
+    background-color: rgba(121, 121, 121, 0.5);
+    box-shadow: 0 0 20px 0 var(--primary-color);
+    border: 1px solid white;
+    z-index: 10;
+    justify-content: center;
+    align-items: center;
+    transition: ease-in-out 0.5s;
+    scale: 0.9;
+  }
 }
