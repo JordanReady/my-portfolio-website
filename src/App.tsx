@@ -14,6 +14,13 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [shouldSlideOut, setShouldSlideOut] = useState(false);
 
+  window.addEventListener("load", function () {
+    setTimeout(function () {
+      // This hides the address bar:
+      window.scrollTo(0, 1);
+    }, 0);
+  });
+
   const handleIndex = (index: number) => {
     setShouldSlideOut(true);
     setTimeout(() => {
