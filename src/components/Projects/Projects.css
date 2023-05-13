@@ -558,6 +558,11 @@
 }
 
 @media screen and (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar invisible */
+  }
+
   .project-type-btn-container {
     position: static;
     display: flex;
