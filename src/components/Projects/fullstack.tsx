@@ -103,7 +103,7 @@ export default function Fullstack(props: any) {
                   of all skill levels to develop their abilities and enjoy the
                   game. It was built using Ruby on Rails for the backend,
                   ActionCable for websockets, and React for the frontend, and
-                  hosted on Heroku.It was built using Ruby on Rails for the
+                  hosted on Heroku. It was built using Ruby on Rails for the
                   backend, ActionCable for websockets, and React for the
                   frontend, and hosted on Heroku.
                   <div className="spacer"></div>
@@ -111,8 +111,12 @@ export default function Fullstack(props: any) {
               </div>
             </div>
             <div className="expanded-controls">
-              <button className="expanded-button live-site">Live Site</button>
-              <a className="expanded-link" href="" target="blank">
+              {/* <button className="expanded-button live-site">Live Site</button> */}
+              <a
+                className="expanded-link"
+                href="https://github.com/JordanReady/The-Knights-Den"
+                target="blank"
+              >
                 Github
               </a>
               <button className="expanded-button" onClick={resetImgs}>

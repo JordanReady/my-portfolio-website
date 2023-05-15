@@ -526,6 +526,8 @@
 }
 
 .project-description-header {
+  position: sticky;
+  top: 10px;
   font-size: 30px;
   margin: 0;
   padding: 0;
@@ -534,6 +536,7 @@
   text-align: center;
   margin-left: 10px;
   margin-top: 10px;
+  background-color: rgba(240, 248, 255, 0);
 }
 
 .project-description {
@@ -691,5 +694,24 @@
     align-items: center;
     transition: ease-in-out 0.5s;
     scale: 0.9;
+  }
+}
+
+/* Target larger displays */
+@media screen and (min-width: 1920px) {
+  .project-description {
+    font-size: 12px !important;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .project-description {
+    font-size: 16px !important;
+  }
+
+  @media screen and (min-width: 3840px) {
+    .project-description {
+      font-size: 18px !important;
+    }
   }
 }
