@@ -23,7 +23,7 @@ export default function Fullstack(props: any) {
         url = "https://the-knights-den.herokuapp.com";
         break;
       case "2":
-        url = "https://github.com/JordanReady-Codes/full_stack_airbnb_clone";
+        url = "https://fs-airbnb-clone.herokuapp.com/";
         break;
       case "3":
         url = "https://github.com/JordanReady-Codes/full_stack_twitter_clone";
@@ -195,6 +195,12 @@ export default function Fullstack(props: any) {
               </div>
             </div>
             <div className="expanded-controls">
+              <button
+                className="expanded-button live-site"
+                onClick={() => visitSite("2")}
+              >
+                Live Site
+              </button>
               <a
                 className="expanded-link"
                 href="https://github.com/JordanReady-Codes/full_stack_airbnb_clone"
