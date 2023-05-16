@@ -111,7 +111,12 @@ export default function Fullstack(props: any) {
               </div>
             </div>
             <div className="expanded-controls">
-              {/* <button className="expanded-button live-site">Live Site</button> */}
+              <button
+                className="expanded-button live-site"
+                onClick={() => visitSite("1")}
+              >
+                Live Site
+              </button>
               <a
                 className="expanded-link"
                 href="https://github.com/JordanReady/The-Knights-Den"
