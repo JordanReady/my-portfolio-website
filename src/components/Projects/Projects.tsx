@@ -22,6 +22,7 @@ import FsAirBnb from "../../assets/fs-airbnb-clone.png";
 import FsAirBnb2 from "../../assets/fs-airbnb-clone-2.png";
 import FsAirBnb3 from "../../assets/fs-airbnb-clone-3.png";
 import FsAirBnb1 from "../../assets/fs-airbnb-clone-1.png";
+import FsAirBnb4 from "../../assets/fs-airbnb-clone-4.png";
 
 import "./Projects.css";
 import Frontend from "./frontend";
@@ -60,10 +61,13 @@ export default function Projects() {
           setFsAirBnbImgs(FsAirBnb3);
           break;
         case FsAirBnb3:
-          setFsAirBnbImgs(FsAirBnb);
+          setFsAirBnbImgs(FsAirBnb4);
           break;
         case FsAirBnb1:
           setFsAirBnbImgs(FsAirBnb2);
+          break;
+        case FsAirBnb4:
+          setFsAirBnbImgs(FsAirBnb);
           break;
         default:
           setFsAirBnbImgs(FsAirBnb);
