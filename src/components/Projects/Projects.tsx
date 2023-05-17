@@ -1,8 +1,9 @@
 import React, { useRef, useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import ChessAppImg from "../../assets/chess-app-2.png";
+import ChessAppImg from "../../assets/chess-app-5.png";
 import ChessAppImg2 from "../../assets/chess-app-3.png";
 import ChessAppImg3 from "../../assets/chess-app-4.png";
+import ChessAppImg4 from "../../assets/chess-app-2.png";
 import AirBnbImg from "../../assets/gaming-tp-1.png";
 import AirBnbImg2 from "../../assets/hiking-tp.png";
 import AirBnbImg3 from "../../assets/rock-climbing-tp-2.png";
@@ -144,10 +145,13 @@ export default function Projects() {
           setChessImgs(ChessAppImg3);
           break;
         case ChessAppImg3:
+          setChessImgs(ChessAppImg4);
+          break;
+        case ChessAppImg4:
           setChessImgs(ChessAppImg);
           break;
         default:
-          setChessImgs(ChessAppImg);
+          setChessImgs(ChessAppImg4);
       }
     }, 3000);
 
