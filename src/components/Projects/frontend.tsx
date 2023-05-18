@@ -88,25 +88,27 @@ export default function Frontend(props: any) {
                 <h3 className="project-description-header">
                   Project Description
                 </h3>
-                <p className="project-description">
-                  The Airbnb news website clone is a frontend project that was
-                  built using HTML, CSS, and Bootstrap. The website features a
-                  top news story section that showcases the most important news
-                  article of the day. Additionally, there are multiple
-                  grid-based sections that highlight the latest news articles
-                  and provide links to various social media platforms. The
-                  design includes carefully crafted grids created using
-                  Bootstrap to provide a consistent and intuitive user
-                  experience. The picture reel section, news categories section,
-                  sign up for newsletter section, and footer sections are all
-                  designed using Bootstrap grids to ensure that they display
-                  optimally on different devices. The website's goal is to
-                  provide users with a clean and straightforward way to stay
-                  up-to-date with Airbnb news. The responsive design ensures
-                  that users can access the website from their desktop, tablet,
-                  or smartphone with ease.
-                  <div className="spacer"></div>
-                </p>
+                <section className="description-section">
+                  <p className="project-description">
+                    The Airbnb news website clone is a frontend project that was
+                    built using HTML, CSS, and Bootstrap. The website features a
+                    top news story section that showcases the most important
+                    news article of the day. Additionally, there are multiple
+                    grid-based sections that highlight the latest news articles
+                    and provide links to various social media platforms. The
+                    design includes carefully crafted grids created using
+                    Bootstrap to provide a consistent and intuitive user
+                    experience. The picture reel section, news categories
+                    section, sign up for newsletter section, and footer sections
+                    are all designed using Bootstrap grids to ensure that they
+                    display optimally on different devices. The website's goal
+                    is to provide users with a clean and straightforward way to
+                    stay up-to-date with Airbnb news. The responsive design
+                    ensures that users can access the website from their
+                    desktop, tablet, or smartphone with ease.
+                    <div className="spacer"></div>
+                  </p>
+                </section>
               </div>
             </div>
             <div className="expanded-controls">
@@ -180,18 +182,20 @@ export default function Frontend(props: any) {
                 <h3 className="project-description-header">
                   Project Description
                 </h3>
-                <p className="project-description">
-                  This project is a clone of the Airbnb website's frontend,
-                  built using HTML, CSS, and Bootstrap. The site includes a
-                  user-friendly booking homes form, an engaging customer reviews
-                  section, and a homes available with top rated experiences
-                  section to help users find the best possible accommodations.
-                  These sections utilize bootstrap colomns and rows to create a
-                  responsive grid layout that adjusts to fit the screen size.
-                  The site also includes a footer with links to useful
-                  information and social media icons.
-                  <div className="spacer"></div>
-                </p>
+                <section className="description-section">
+                  <p className="project-description">
+                    This project is a clone of the Airbnb website's frontend,
+                    built using HTML, CSS, and Bootstrap. The site includes a
+                    user-friendly booking homes form, an engaging customer
+                    reviews section, and a homes available with top rated
+                    experiences section to help users find the best possible
+                    accommodations. These sections utilize bootstrap colomns and
+                    rows to create a responsive grid layout that adjusts to fit
+                    the screen size. The site also includes a footer with links
+                    to useful information and social media icons.
+                    <div className="spacer"></div>
+                  </p>
+                </section>
               </div>
             </div>
             <div className="expanded-controls">
@@ -265,21 +269,23 @@ export default function Frontend(props: any) {
                 <h3 className="project-description-header">
                   Project Description
                 </h3>
-                <p className="project-description">
-                  This project is a responsive clone of the popular news
-                  magazine website, Newsweek. It was built using HTML, CSS, and
-                  Bootstrap to recreate the sleek and modern look of the
-                  original site. The homepage features a dynamic layout with a
-                  top headline and a scrolling carousel of other top stories.
-                  Below that, there are various sections for news categories,
-                  such as politics, world news, technology, and entertainment,
-                  each with its own grid of articles. The site is fully
-                  responsive, with optimized layouts for mobile, tablet, and
-                  desktop screens. The navigation menu collapses into a
-                  hamburger menu on smaller screens, and the article grids
-                  adjust their size and layout to fit the screen.
-                  <div className="spacer"></div>
-                </p>
+                <section className="description-section">
+                  <p className="project-description">
+                    This project is a responsive clone of the popular news
+                    magazine website, Newsweek. It was built using HTML, CSS,
+                    and Bootstrap to recreate the sleek and modern look of the
+                    original site. The homepage features a dynamic layout with a
+                    top headline and a scrolling carousel of other top stories.
+                    Below that, there are various sections for news categories,
+                    such as politics, world news, technology, and entertainment,
+                    each with its own grid of articles. The site is fully
+                    responsive, with optimized layouts for mobile, tablet, and
+                    desktop screens. The navigation menu collapses into a
+                    hamburger menu on smaller screens, and the article grids
+                    adjust their size and layout to fit the screen.
+                    <div className="spacer"></div>
+                  </p>
+                </section>
               </div>
             </div>
             <div className="expanded-controls">
