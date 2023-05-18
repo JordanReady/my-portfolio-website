@@ -540,7 +540,7 @@
 }
 
 .project-description {
-  font-size: 12px;
+  font-size: clamp(12px, 1.5dvh, 20px);
   overflow: auto !important;
   margin-top: 5px;
   padding-top: 15px;
@@ -694,24 +694,5 @@
     align-items: center;
     transition: ease-in-out 0.5s;
     scale: 0.9;
-  }
-}
-
-/* Target larger displays */
-@media screen and (min-width: 1920px) {
-  .project-description {
-    font-size: 12px !important;
-  }
-}
-
-@media screen and (min-width: 2560px) {
-  .project-description {
-    font-size: 16px !important;
-  }
-
-  @media screen and (min-width: 3840px) {
-    .project-description {
-      font-size: 18px !important;
-    }
   }
 }

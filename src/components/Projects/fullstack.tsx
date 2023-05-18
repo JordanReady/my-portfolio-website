@@ -103,9 +103,7 @@ export default function Fullstack(props: any) {
                   of all skill levels to develop their abilities and enjoy the
                   game. It was built using Ruby on Rails for the backend,
                   ActionCable for websockets, and React for the frontend, and
-                  hosted on Heroku. It was built using Ruby on Rails for the
-                  backend, ActionCable for websockets, and React for the
-                  frontend, and hosted on Heroku.
+                  hosted on Heroku.
                   <div className="spacer"></div>
                 </p>
               </div>
