@@ -35,20 +35,20 @@ export default function About() {
     return () => clearInterval(interval);
   }, [image]);
 
-  useEffect(() => {
-    typedRef.current = new Typed(".about-typed", {
-      strings: [
-        "If you've stumbled upon this page, chances are you're curious about who built it. I'm the guy behind the magic, a fullstack web developer with a passion for creating beautiful, functional, and user-friendly web applications. When I'm not busy typing away, I'm out conquering the great outdoors. Despite my fear of heights, I find myself drawn to the thrill of rock climbing. The physical and mental challenges keep me on my toes, literally! I also enjoy hiking, golfing, and hitting the slopes on my snowboard during the winter months. Of course, I can't neglect my virtual adventures, and you'll often find me gaming with friends in my downtime. But no matter what I'm doing, I always try to keep learning and growing, especially when it comes to web development. I'm constantly seeking new resources and experimenting with the latest tools and technologies to stay at the forefront of my field. I hope this gives you a better understanding of who I am and what I'm all about. If you're interested in working together on a project, or just want to chat about web development, don't hesitate to reach out! There's a handy contact section right at the top of the page, waiting for you.",
-      ],
-      typeSpeed: 0,
-      loop: false,
-      cursorChar: "",
-    });
+  // useEffect(() => {
+  //   typedRef.current = new Typed(".about-typed", {
+  //     strings: [
+  //       "If you've stumbled upon this page, chances are you're curious about who built it. I'm the guy behind the magic, a fullstack web developer with a passion for creating beautiful, functional, and user-friendly web applications. When I'm not busy typing away, I'm out conquering the great outdoors. Despite my fear of heights, I find myself drawn to the thrill of rock climbing. The physical and mental challenges keep me on my toes, literally! I also enjoy hiking, golfing, and hitting the slopes on my snowboard during the winter months. Of course, I can't neglect my virtual adventures, and you'll often find me gaming with friends in my downtime. But no matter what I'm doing, I always try to keep learning and growing, especially when it comes to web development. I'm constantly seeking new resources and experimenting with the latest tools and technologies to stay at the forefront of my field. I hope this gives you a better understanding of who I am and what I'm all about. If you're interested in working together on a project, or just want to chat about web development, don't hesitate to reach out! There's a handy contact section right at the top of the page, waiting for you.",
+  //     ],
+  //     typeSpeed: 0,
+  //     loop: false,
+  //     cursorChar: "",
+  //   });
 
-    return () => {
-      typedRef.current?.destroy();
-    };
-  }, []);
+  //   return () => {
+  //     typedRef.current?.destroy();
+  //   };
+  // }, []);
 
   return (
     <>
@@ -81,7 +81,57 @@ export default function About() {
                     <span style={{ "--i": "3" } as TitleStyle}> I</span>
                     <span style={{ "--i": "4" } as TitleStyle}>?</span>
                   </h1>
-                  <p className="about-typed"></p>
+                  <p className="about-typed">
+                    <span style={{ "--i": "5" } as TitleStyle}>
+                      If you've stumbled upon this page, chances are you're
+                      curious about who built it.{" "}
+                    </span>
+                    <span style={{ "--i": "6" } as TitleStyle}>
+                      I'm the guy behind the magic, a fullstack web developer
+                      with a passion for creating beautiful, functional, and
+                      user-friendly web applications.{" "}
+                    </span>
+                    <span style={{ "--i": "7" } as TitleStyle}>
+                      When I'm not busy typing away, I'm out conquering the
+                      great outdoors.{" "}
+                    </span>
+                    <span style={{ "--i": "8" } as TitleStyle}>
+                      Despite my fear of heights, I find myself drawn to the
+                      thrill of rock climbing.{" "}
+                    </span>
+                    <span style={{ "--i": "9" } as TitleStyle}>
+                      The physical and mental challenges keep me on my toes,
+                      literally! I also enjoy hiking, golfing, and hitting the
+                      slopes on my snowboard during the winter months.{" "}
+                    </span>
+                    <span style={{ "--i": "10" } as TitleStyle}>
+                      Of course, I can't neglect my virtual adventures, and
+                      you'll often find me gaming with friends in my downtime.{" "}
+                    </span>
+                    <span style={{ "--i": "10" } as TitleStyle}>
+                      But no matter what I'm doing, I always try to keep
+                      learning and growing, especially when it comes to web
+                      development.{" "}
+                    </span>
+                    <span style={{ "--i": "12" } as TitleStyle}>
+                      I'm constantly seeking new resources and experimenting
+                      with the latest tools and technologies to stay at the
+                      forefront of my field.{" "}
+                    </span>
+                    <span style={{ "--i": "13" } as TitleStyle}>
+                      I hope this gives you a better understanding of who I am
+                      and what I'm all about.{" "}
+                    </span>
+                    <span style={{ "--i": "14" } as TitleStyle}>
+                      If you're interested in working together on a project, or
+                      just want to chat about web development, don't hesitate to
+                      reach out!{" "}
+                    </span>
+                    <span style={{ "--i": "15" } as TitleStyle}>
+                      There's a handy contact section right at the top of the
+                      page, waiting for you.
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>

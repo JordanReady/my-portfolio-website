@@ -200,7 +200,18 @@
   color: var(--secondary-color);
   opacity: 0;
   animation: slideTop 1s ease forwards;
-  animation-delay: calc(1s + 0.2s * var(--i));
+  animation-delay: calc(0.3s + 0.2s * var(--i));
+}
+
+/* h1 span::after {
+  content: "";
+  position: absolute;
+} */
+
+.about-content p span {
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: calc(0.5s + 0.1s * var(--i));
 }
 
 .about-img {
