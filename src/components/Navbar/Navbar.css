@@ -16,6 +16,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
+  padding-top: 0 !important;
 }
 
 .header button:hover {
@@ -27,6 +28,7 @@
 }
 
 .logo {
+  padding-top: 5px;
   font-size: 1.8rem;
   font-weight: bolder;
   color: var(--secondary-color);
@@ -38,8 +40,8 @@
 }
 
 .logo img {
-  width: 70px;
-  height: 70px;
+  width: 90px;
+  height: 90px;
   object-fit: cover;
   margin-right: 10px;
 }
@@ -50,7 +52,7 @@
 }
 
 .navbar button {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   background-color: transparent;
   border: none;
   color: white;
@@ -123,6 +125,9 @@
     flex-direction: column;
     padding: 0 !important;
     background-color: rgba(0, 0, 0, 0.5);
+  }
+  .navbar {
+    padding-top: 5px !important;
   }
   .navbar .active {
     padding-top: 0.25rem;
