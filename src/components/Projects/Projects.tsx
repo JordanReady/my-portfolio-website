@@ -23,6 +23,10 @@ import FsAirBnb2 from "../../assets/fs-airbnb-clone-2.png";
 import FsAirBnb3 from "../../assets/fs-airbnb-clone-3.png";
 import FsAirBnb1 from "../../assets/fs-airbnb-clone-1.png";
 import FsAirBnb4 from "../../assets/fs-airbnb-clone-4.png";
+import YouTubeImg from "../../assets/Youtube_app_1.png";
+import YouTubeImg2 from "../../assets/Youtube_app_2.png";
+import YouTubeImg3 from "../../assets/Youtube_app_3.png";
+import YouTubeImg4 from "../../assets/Youtube_app_4.png";
 
 import "./Projects.css";
 import Frontend from "./frontend";
@@ -43,6 +47,7 @@ export default function Projects() {
   const [airBnbNewsImgs, setAirBnbNewsImgs] = useState(AirBnbImg);
   const [newsWeekImgs, setNewsWeekImgs] = useState(NewsWeekImg);
   const [FsAirBnbImgs, setFsAirBnbImgs] = useState(FsAirBnb);
+  const [youtubeImgs, setYoutubeImgs] = useState(YouTubeImg);
   const [projectType, setProjectType] = useState("fullstack");
 
   useEffect(() => {
@@ -182,6 +187,31 @@ export default function Projects() {
     return () => clearInterval(interval);
   }, [expandedTile, airBnbNewsImgs]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      switch (youtubeImgs) {
+        case YouTubeImg:
+          setYoutubeImgs(YouTubeImg2);
+          break;
+        case YouTubeImg2:
+          setYoutubeImgs(YouTubeImg3);
+          break;
+        case YouTubeImg3:
+          setYoutubeImgs(YouTubeImg4);
+          break;
+        case YouTubeImg4:
+          setYoutubeImgs(YouTubeImg);
+          break;
+        default:
+          setYoutubeImgs(YouTubeImg);
+      }
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [expandedTile, youtubeImgs]);
+
   function expandTile(key: number) {
     if (expandedTile === key) {
       setExpandedTile(0);
@@ -259,6 +289,7 @@ export default function Projects() {
             airBnbNewsImgs={airBnbNewsImgs}
             newsWeekImgs={newsWeekImgs}
             airBnbFrontendImgs={airBnbFrontendImgs}
+            youtubeImgs={youtubeImgs}
             resetImgs={resetImgs}
           />
         )}

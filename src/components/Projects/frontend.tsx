@@ -14,6 +14,7 @@ export default function Frontend(props: any) {
     airBnbNewsImgs,
     newsWeekImgs,
     airBnbFrontendImgs,
+    youtubeImgs,
     resetImgs,
   } = props;
 
@@ -24,7 +25,7 @@ export default function Frontend(props: any) {
         url = "https://trusting-swirles-c46c81.netlify.app/";
         break;
       case "2":
-        url = "https://zen-jang-c45a43.netlify.app/";
+        url = "https://dainty-empanada-ce963a.netlify.app/";
         break;
       case "3":
         url =
@@ -242,25 +243,26 @@ export default function Frontend(props: any) {
         <div className="tile-triangle-bottomleft"></div>
         <div className="tile-triangle-bottomleft-accent"></div>
         <div className="text-container">
-          <h3 className="preview-project-title">NewsWeek Clone</h3>
+          <h3 className="preview-project-title">YouTube Clone</h3>
           <p className="preview-project-description">
-            Responsive NewsWeek website clone
+            Responsive YouTube website clone
           </p>
           <div className="preview-technologies-container">
             <li className="preview-technologies-title">Technologies:</li>
-            <li>HTML</li>
+            <li>React</li>
             <li>CSS</li>
-            <li>Bootstrap</li>
+            <li>Material UI</li>
+            <li>Rapid API</li>
           </div>
         </div>
         {expandedTile === 3 && (
           <div>
             <div className="row expanded-project-row">
               <div className="col-md-7 project-img-container">
-                <h3 className="expanded-project-title">NewsWeek Clone</h3>
+                <h3 className="expanded-project-title">YouTube Clone</h3>
                 <img
                   className="project-img img-fluid"
-                  src={newsWeekImgs}
+                  src={youtubeImgs}
                   alt="project-1-screenshot"
                   onClick={() => visitSite("2")}
                 />
@@ -271,18 +273,19 @@ export default function Frontend(props: any) {
                 </h3>
                 <section className="description-section">
                   <p className="project-description">
-                    This project is a responsive clone of the popular news
-                    magazine website, Newsweek. It was built using HTML, CSS,
-                    and Bootstrap to recreate the sleek and modern look of the
-                    original site. The homepage features a dynamic layout with a
-                    top headline and a scrolling carousel of other top stories.
-                    Below that, there are various sections for news categories,
-                    such as politics, world news, technology, and entertainment,
-                    each with its own grid of articles. The site is fully
-                    responsive, with optimized layouts for mobile, tablet, and
-                    desktop screens. The navigation menu collapses into a
-                    hamburger menu on smaller screens, and the article grids
-                    adjust their size and layout to fit the screen.
+                    The YouTube Clone Application is a modern web application
+                    built with React JS and styled using Material UI 5. It
+                    replicates the core functionalities of YouTube, allowing
+                    users to browse and watch videos, search for content, and
+                    interact with the video player and related information. Key
+                    features of the application include video playback, video
+                    recommendations, video search, and a responsive design. The
+                    user interface is visually appealing, thanks to the use of
+                    Material UI 5 components. To provide up-to-date video data,
+                    the application integrates with the YouTube Data API through
+                    Rapid API. This allows users to access video information
+                    such as titles, descriptions, channel details, and view
+                    counts.
                     <div className="spacer"></div>
                   </p>
                 </section>
@@ -291,7 +294,7 @@ export default function Frontend(props: any) {
             <div className="expanded-controls">
               <a
                 className="expanded-button expanded-link"
-                href="https://zen-jang-c45a43.netlify.app/#"
+                href="https://dainty-empanada-ce963a.netlify.app/"
                 target="blank"
               >
                 Live Site
