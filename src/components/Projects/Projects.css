@@ -230,6 +230,10 @@
   animation-delay: calc(0.3s * var(--i));
 }
 
+.hidden {
+  display: none;
+}
+
 .project-tile:hover {
   background-color: rgba(121, 121, 121, 0.5);
   box-shadow: 0 0 20px 0 var(--primary-color);
@@ -386,7 +390,7 @@
 
 .expanded {
   background-color: rgba(32, 32, 32, 0.02);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(0px);
   border: 1px solid var(--primary-color);
   border-radius: 10px;
   position: absolute;
@@ -394,10 +398,15 @@
   left: 50%;
   transform: translate(-50%, -50%) scale(1.6);
   z-index: 15;
-  max-height: 50dvh;
+  max-height: 54dvh;
   width: 60dvw;
   overflow: hidden;
   transition: all 0.8s ease-in-out;
+}
+
+.expanded.expanded-enter-active,
+.expanded.expanded-leave-active {
+  backdrop-filter: blur(50px); /* Final value */
 }
 
 .expanded:hover {
@@ -565,6 +574,7 @@
   border-radius: 1px;
 }
 
+/* screen size */
 @media screen and (max-width: 768px) {
   ::-webkit-scrollbar {
     width: 0px;
@@ -661,7 +671,7 @@
   .project-description-container {
     padding: 5px;
     padding-top: 0;
-    padding-bottom: 12vh;
+    padding-bottom: 8.5vh;
     height: 38dvh;
   }
 
@@ -671,10 +681,6 @@
     height: 26vh;
     margin: 0;
     padding-top: 5px;
-  }
-
-  .spacer {
-    min-height: 3vh;
   }
 
   .project-description-header {
