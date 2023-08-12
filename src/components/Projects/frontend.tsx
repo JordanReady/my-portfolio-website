@@ -2,18 +2,19 @@ import React, { useState } from "react";
 import ProjectTile from "./ProjectTile";
 import "./Projects.css";
 
-interface ProjectStyle extends React.CSSProperties {
-  "--i": string;
-}
+import AirBnbNewsImg from "../../assets/airbnb_news_clone_1.png";
+import AirBnbNewsImg2 from "../../assets/airbnb_news_clone_2.png";
+import AirBnbNewsImg3 from "../../assets/airbnb_news_clone_3.png";
+import AirBnbFrontend from "../../assets/airbnb_frontend_1.png";
+import AirBnbFrontend2 from "../../assets/airbnb_frontend_2.png";
+import AirBnbFrontend3 from "../../assets/airbnb_frontend_3.png";
+import YouTubeImg from "../../assets/Youtube_app_1.png";
+import YouTubeImg2 from "../../assets/Youtube_app_2.png";
+import YouTubeImg3 from "../../assets/Youtube_app_3.png";
+import YouTubeImg4 from "../../assets/Youtube_app_4.png";
 
 export default function Frontend(props: any) {
-  const {
-    screenWidth,
-    airBnbNewsImgs,
-    airBnbFrontendImgs,
-    youtubeImgs,
-    resetImgs,
-  } = props;
+  const { screenWidth, resetImgs, expandedTile } = props;
 
   return (
     <div
@@ -23,6 +24,7 @@ export default function Frontend(props: any) {
     >
       <ProjectTile
         id={1}
+        expandedTile={expandedTile}
         title="AirBnb Newsroom"
         description="Responsive AirBnb News website clone"
         longDescription="The Airbnb news website clone is a frontend project that was
@@ -42,7 +44,7 @@ export default function Frontend(props: any) {
         ensures that users can access the website from their
         desktop, tablet, or smartphone with ease."
         technologies={["React", "HTML", "CSS", "Bootstrap"]}
-        images={airBnbNewsImgs}
+        images={[AirBnbNewsImg, AirBnbNewsImg2, AirBnbNewsImg3]}
         resetImgs={resetImgs}
         siteLink="https://trusting-swirles-c46c81.netlify.app/"
         githubLink="https://github.com/JordanReady"
@@ -50,6 +52,7 @@ export default function Frontend(props: any) {
 
       <ProjectTile
         id={2}
+        expandedTile={expandedTile}
         title="Booking Website Clone"
         description="AirBnb booking website clone"
         longDescription="This project is a clone of the Airbnb website's frontend,
@@ -62,7 +65,7 @@ export default function Frontend(props: any) {
         the screen size. The site also includes a footer with links
         to useful information and social media icons."
         technologies={["HTML", "CSS", "Bootstrap"]}
-        images={airBnbFrontendImgs}
+        images={[AirBnbFrontend, AirBnbFrontend2, AirBnbFrontend3]}
         resetImgs={resetImgs}
         siteLink="https://645c288d2938fa1c3429ef57--endearing-otter-26c1ed.netlify.app/"
         githubLink="https://github.com/JordanReady"
@@ -70,6 +73,7 @@ export default function Frontend(props: any) {
 
       <ProjectTile
         id={3}
+        expandedTile={expandedTile}
         title="YouTube Clone"
         description="Responsive YouTube website clone"
         longDescription="The YouTube Clone Application is a modern web application
@@ -86,7 +90,7 @@ export default function Frontend(props: any) {
         such as titles, descriptions, channel details, and view
         counts."
         technologies={["React", "CSS", "Material UI", "Rapid API"]}
-        images={youtubeImgs}
+        images={[YouTubeImg, YouTubeImg2, YouTubeImg3, YouTubeImg4]}
         resetImgs={resetImgs}
         siteLink="https://dainty-empanada-ce963a.netlify.app/"
         githubLink=" https://github.com/JordanReady"

@@ -1,13 +1,22 @@
-import React, { useState } from "react";
+import React from "react";
 import ProjectTile from "./ProjectTile";
 import "./Projects.css";
 
-interface ProjectStyle extends React.CSSProperties {
-  "--i": string;
-}
+import ChessAppImg from "../../assets/chess-app-5.png";
+import ChessAppImg2 from "../../assets/chess-app-3.png";
+import ChessAppImg3 from "../../assets/chess-app-4.png";
+import ChessAppImg4 from "../../assets/chess-app-2.png";
+import FsAirBnb from "../../assets/fs-airbnb-clone.png";
+import FsAirBnb2 from "../../assets/fs-airbnb-clone-2.png";
+import FsAirBnb3 from "../../assets/fs-airbnb-clone-3.png";
+import FsAirBnb1 from "../../assets/fs-airbnb-clone-1.png";
+import FsAirBnb4 from "../../assets/fs-airbnb-clone-4.png";
+import TwitterImg from "../../assets/twitter_app_1.png";
+import TwitterImg2 from "../../assets/twitter_app_2.png";
+import TwitterImg3 from "../../assets/twitter_app_3.png";
 
 export default function Fullstack(props: any) {
-  const { screenWidth, chessImgs, airBnbImgs, twitterImgs, resetImgs } = props;
+  const { screenWidth, resetImgs, expandedTile } = props;
 
   return (
     <div
@@ -17,6 +26,7 @@ export default function Fullstack(props: any) {
     >
       <ProjectTile
         id={1}
+        expandedTile={expandedTile}
         title="Chess App"
         description="Multiplayer chess learning platform"
         longDescription="The Knight's Den is a web application designed for beginners
@@ -42,7 +52,7 @@ export default function Fullstack(props: any) {
           "Bootstrap",
           "Heroku",
         ]}
-        images={chessImgs}
+        images={[ChessAppImg, ChessAppImg2, ChessAppImg3, ChessAppImg4]}
         resetImgs={resetImgs}
         siteLink="https://the-knights-den.herokuapp.com"
         githubLink="https://github.com/JordanReady/The-Knights-Den"
@@ -50,6 +60,7 @@ export default function Fullstack(props: any) {
 
       <ProjectTile
         id={2}
+        expandedTile={expandedTile}
         title="AirBnb Clone"
         description="Booking platform for vacation rentals"
         longDescription="The full-stack clone of Airbnb is a web application built
@@ -71,7 +82,7 @@ export default function Fullstack(props: any) {
           "Bootstrap",
           "Heroku",
         ]}
-        images={airBnbImgs}
+        images={[FsAirBnb, FsAirBnb1, FsAirBnb2, FsAirBnb3, FsAirBnb4]}
         resetImgs={resetImgs}
         siteLink="https://fs-airbnb-clone.herokuapp.com/"
         githubLink="https://github.com/JordanReady-Codes/full_stack_airbnb_clone"
@@ -79,6 +90,7 @@ export default function Fullstack(props: any) {
 
       <ProjectTile
         id={3}
+        expandedTile={expandedTile}
         title="Twitter Clone"
         description="Social media platform for sharing thoughts"
         longDescription="The full-stack Twitter Clone project is a web application
@@ -91,7 +103,7 @@ export default function Fullstack(props: any) {
           to a specific user's profile to view only the tweets that
           user has made."
         technologies={["React", "Ruby on Rails", "Bootstrap", "Heroku"]}
-        images={twitterImgs}
+        images={[TwitterImg, TwitterImg2, TwitterImg3]}
         resetImgs={resetImgs}
         siteLink="https://github.com/JordanReady-Codes/full_stack_twitter_clone"
         githubLink="https://github.com/JordanReady-Codes/full_stack_airbnb_clone"

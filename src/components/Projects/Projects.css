@@ -507,6 +507,7 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  justify-content: center;
 }
 
 .project-img {
@@ -612,6 +613,10 @@
     position: absolute;
   }
 
+  .project-img-container {
+    height: 22dvh;
+  }
+
   .expanded-project-row {
     flex-direction: column;
     height: 100%;
@@ -654,12 +659,6 @@
     display: none; /* For Chrome, Safari, and Opera */
   }
 
-  .project-img-container {
-    display: contents;
-    align-items: center;
-    justify-content: center;
-  }
-
   .project-img {
     width: 95%;
     height: 100%;
@@ -672,13 +671,12 @@
     padding: 5px;
     padding-top: 0;
     padding-bottom: 8.5vh;
-    height: 38dvh;
+    height: 40dvh;
   }
 
   .project-description {
     overflow: scroll;
     font-size: 11px;
-    height: 26vh;
     margin: 0;
     padding-top: 5px;
   }
@@ -706,4 +704,20 @@
     transition: ease-in-out 0.5s;
     scale: 0.9;
   }
+}
+
+/* animations */
+
+/* Apply a transition to the image opacity */
+.project-img {
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute; /* Position images on top of each other */
+}
+
+/* Apply the fade-in effect to the active image */
+.project-img.visible {
+  opacity: 1;
+  visibility: visible;
 }

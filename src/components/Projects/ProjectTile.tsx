@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Projects.css";
 
 interface ProjectTileProps {
   id: number;
+  expandedTile: number;
   title: string;
   description: string;
   longDescription: string;
@@ -15,6 +16,7 @@ interface ProjectTileProps {
 
 const ProjectTile: React.FC<ProjectTileProps> = ({
   id,
+  expandedTile,
   title,
   description,
   longDescription,
@@ -25,6 +27,22 @@ const ProjectTile: React.FC<ProjectTileProps> = ({
   siteLink,
 }) => {
   const [expanded, setExpanded] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+      setTimeout(() => {
+        setIsAnimating(false);
+      }, 500); // Duration of animation
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [expandedTile, images]);
 
   const handleExpand = () => {
     setExpanded(!expanded);
@@ -59,13 +77,18 @@ const ProjectTile: React.FC<ProjectTileProps> = ({
         <div>
           <div className="row expanded-project-row">
             <div className="col-md-7 project-img-container">
-              <h3 className="expanded-project-title">{title}</h3>
-              <img
-                className="project-img img-fluid"
-                src={images}
-                alt="project-1-screenshot"
-                onClick={() => window.open(siteLink, "_blank")}
-              />
+              {images.map((image, index) => (
+                <img
+                  key={index}
+                  className={`project-img img-fluid ${
+                    index === currentImageIndex ? "visible" : ""
+                  } ${isAnimating ? "fade-in" : ""}`}
+                  src={image}
+                  alt={`project-${index + 1}-screenshot`}
+                  style={{ zIndex: index === currentImageIndex ? 1 : 0 }} // Control stacking order
+                  onClick={() => window.open(siteLink, "_blank")}
+                />
+              ))}
             </div>
             <div className="col-md-5 project-description-container">
               <h3 className="project-description-header">
