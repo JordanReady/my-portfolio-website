@@ -1,0 +1,32 @@
+{
+  "hash": "cef8b63e",
+  "browserHash": "e1f268ee",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "c08c407b",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "574fd9ea",
+      "needsInterop": true
+    },
+    "typed.js": {
+      "src": "../../node_modules/typed.js/dist/typed.module.js",
+      "file": "typed__js.js",
+      "fileHash": "e9e7f86c",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-BHRT4LQR": {
+      "file": "chunk-BHRT4LQR.js"
+    },
+    "chunk-RSJERJUL": {
+      "file": "chunk-RSJERJUL.js"
+    }
+  }
+}
