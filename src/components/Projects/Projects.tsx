@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./Projects.css";
 import Frontend from "./frontend";
 import Fullstack from "./fullstack";
+import Freelance from "./freelance";
 
 export default function Projects() {
   const [expandedTile, setExpandedTile] = useState(0);
@@ -23,9 +24,21 @@ export default function Projects() {
   }
 
   function handleProjectType(e: any) {
-    if (e.target.id === "fullstack") {
-      setProjectType("fullstack");
-    } else setProjectType("frontend");
+    switch (e.target.id) {
+      case "fullstack":
+        setProjectType("fullstack");
+        break;
+      case "frontend":
+        setProjectType("frontend");
+        break;
+      case "freelance":
+        setProjectType("freelance");
+        break;
+      default:
+        // Handle any other cases or set a default project type
+        break;
+    }
+
     console.log(projectType);
   }
 
@@ -63,20 +76,54 @@ export default function Projects() {
           >
             Front-End
           </button>
+          <button
+            id="freelance"
+            className={`btn project-btn ${
+              projectType === "freelance" ? "active-project-btn" : ""
+            }`}
+            onClick={handleProjectType}
+          >
+            Freelance
+          </button>
         </div>
-        {projectType === "fullstack" ? (
-          <Fullstack
-            screenWidth={screenWidth}
-            expandedTile={expandedTile}
-            expandTile={expandTile}
-          />
-        ) : (
-          <Frontend
-            screenWidth={screenWidth}
-            expandedTile={expandedTile}
-            expandTile={expandTile}
-          />
-        )}
+        {(() => {
+          switch (projectType) {
+            case "fullstack":
+              return (
+                <Fullstack
+                  screenWidth={screenWidth}
+                  expandedTile={expandedTile}
+                  expandTile={expandTile}
+                />
+              );
+            case "frontend":
+              return (
+                <Frontend
+                  screenWidth={screenWidth}
+                  expandedTile={expandedTile}
+                  expandTile={expandTile}
+                />
+              );
+            case "freelance":
+              // Add your Freelance component here if available
+              return (
+                <Freelance
+                  screenWidth={screenWidth}
+                  expandedTile={expandedTile}
+                  expandTile={expandTile}
+                />
+              );
+            default:
+              // Handle any other cases or set a default component
+              return (
+                <Fullstack
+                  screenWidth={screenWidth}
+                  expandedTile={expandedTile}
+                  expandTile={expandTile}
+                />
+              );
+          }
+        })()}
       </div>
     </div>
   );

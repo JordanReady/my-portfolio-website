@@ -585,17 +585,10 @@
   .project-type-btn-container {
     position: static;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     margin-bottom: 10px;
-  }
-
-  #fullstack {
-    margin-right: 10px !important;
-  }
-
-  #frontend {
-    margin-left: 10px !important;
+    margin-left: 12px;
   }
 
   .projects {

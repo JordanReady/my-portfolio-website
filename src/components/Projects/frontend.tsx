@@ -93,7 +93,7 @@ export default function Frontend(props: any) {
         images={[YouTubeImg, YouTubeImg2, YouTubeImg3, YouTubeImg4]}
         resetImgs={resetImgs}
         siteLink="https://dainty-empanada-ce963a.netlify.app/"
-        githubLink=" https://github.com/JordanReady"
+        githubLink=" https://github.com/JordanReady/youtube-clone"
       />
     </div>
   );
